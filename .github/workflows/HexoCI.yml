@@ -17,6 +17,10 @@ jobs:
         with:
           node-version: "16.x"
 
+      - name: 安装 Hexo
+        run: |
+          npm install hexo-cli -g --save
+
       - name: 缓存 node-modules
         id: cache-npm
         uses: actions/cache@v3
@@ -34,22 +38,6 @@ jobs:
         if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         run: |
           npm install --save
-
-      - name: 安装 Hexo
-        run: |
-          npm install hexo-cli -g --save
-
-      - name: 安装 butterfly
-        run: |
-          npm install hexo-theme-butterfly
-
-      - name: 安装 pug 以及 stylus 的渲染器
-        run: |
-          npm install hexo-renderer-pug hexo-renderer-stylus --save
-
-      - name: 安装 hexo-deployer-git
-        run: |
-          npm install hexo-deployer-git --save
 
       - name: Replace secrets
         run: |

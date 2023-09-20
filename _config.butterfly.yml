@@ -437,8 +437,8 @@ livere:
 # https://github.com/gitalk/gitalk
 gitalk:
   client_id: 751f9bd040a760abf74d
-  client_secret: OAUTH_TOKEN
-  repo: MskTmi.github.io
+  client_secret: OAUTH_TOKEN # 使用GitHub Secrets
+  repo: MskTmi.github.io 
   owner: MskTmi
   admin: MskTmi
   option:
