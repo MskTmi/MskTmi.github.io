@@ -1,0 +1,73 @@
+name: CI
+on:
+  push:
+    branches: [ "Hexo" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: 自动部署Hexo
+    steps:
+      - name: 检查分支
+        uses: actions/checkout@v2
+        with:
+          ref: Hexo
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v3.8.1
+        with:
+          node-version: "16.x"
+
+      - name: 缓存 node-modules
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: 安装依赖
+        if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        run: |
+          npm install --save
+
+      - name: 安装 Hexo
+        run: |
+          npm install hexo-cli -g --save
+
+      - name: 安装 butterfly
+        run: |
+          npm install hexo-theme-butterfly
+
+      - name: 安装 pug 以及 stylus 的渲染器
+        run: |
+          npm install hexo-renderer-pug hexo-renderer-stylus --save
+
+      - name: 安装 hexo-deployer-git
+        run: |
+          npm install hexo-deployer-git --save
+
+      - name: Replace secrets
+        run: |
+          sed -i 's/OAUTH_TOKEN/${{ secrets.OAUTH_TOKEN }}/' ./_config.butterfly.yml
+
+      - name: 配置环境
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.email "1226594277@qq.com"
+          git config --global user.name "MskTmi"
+          ssh-keygen -y -f ~/.ssh/id_rsa
+
+      - name: 部署 Hexo 
+        run: |
+          hexo clean
+          hexo d
