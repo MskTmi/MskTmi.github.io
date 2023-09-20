@@ -1,0 +1,19 @@
+- class_name: 友情链接
+  class_desc: 还没有朋友交换链接...
+  link_list:
+    - name: 幻想朋友
+      link: https://msktmi.github.io/404.html
+      avatar: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
+      descr: 快速、简单且强大的网志框架
+
+- class_name: 网站
+  class_desc: 值得推荐的网站
+  link_list:
+    - name: Table Convert Online
+      link: https://tableconvert.com/zh-cn/
+      avatar: https://tableconvert.com/images/favicon.png
+      descr: 在线表格转换工具
+    # - name: GitHub
+    #   link: https://github.com/
+    #   avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
+    #   descr: 全球最大同性社交分享平台
