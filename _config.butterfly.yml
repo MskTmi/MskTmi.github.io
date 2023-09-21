@@ -29,7 +29,7 @@ highlight_copy: true # copy button
 highlight_lang: false # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
 highlight_height_limit: false # unit: px
-code_word_wrap: false
+code_word_wrap: true
 
 # Social Settings (社交圖標設置)
 # formal:
@@ -46,8 +46,10 @@ favicon: /img/favicon.png
 
 # Avatar (頭像)
 avatar:
+  # gravatar头像地址
+  # https://gravatar.loli.net/avatar/9e431bf36d8a8f03dca1f1b64b9c1c6b?size=512
   img: https://avatars.githubusercontent.com/u/87525977
-  effect: false
+  effect: true
 
 # Disable all banner image
 disable_top_img: false

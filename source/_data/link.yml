@@ -13,7 +13,7 @@
       link: https://tableconvert.com/zh-cn/
       avatar: https://tableconvert.com/images/favicon.png
       descr: 在线表格转换工具
-    # - name: GitHub
-    #   link: https://github.com/
-    #   avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
-    #   descr: 全球最大同性社交分享平台
+    - name: 让我帮你百度一下
+      link: https://mengkunsoft.github.io/lmbtfy/
+      avatar: https://mengkunsoft.github.io/lmbtfy/img/baidu_logo.png
+      descr: 帮助伸手党 项目地址：https://github.com/mengkunsoft/lmbtfy
