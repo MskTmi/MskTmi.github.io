@@ -15,7 +15,7 @@ highlight_shrink: true
 1. [点击这里添加友链](https://github.com/MskTmi/MskTmi.github.io/edit/Hexo/source/_data/link.yml) 
 2. 按以下示例添加自己的链接（请添加在**友情链接一项的末尾**）
 
-```yaml
+```yaml 
 name: Mst
 link: https://msktmi.github.io/
 avatar: https://avatars.githubusercontent.com/u/87525977
