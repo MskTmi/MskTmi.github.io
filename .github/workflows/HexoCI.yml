@@ -35,7 +35,7 @@ jobs:
             ${{ runner.os }}-
 
       - name: 安装依赖
-        if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        # if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         run: |
           npm install --save
 
