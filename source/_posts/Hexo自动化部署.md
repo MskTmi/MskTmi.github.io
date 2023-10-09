@@ -3,6 +3,9 @@ title: Hexo + Github Actions 实现自动部署
 tags:
   - 教程
   - Hexo
+categories:
+  - 教程
+  - Hexo
 date: 2023-10-07 14:55:45
 updated: 2023-10-07 14:55:45
 ---
@@ -177,8 +180,8 @@ deploy:
 > 这里的repox需要填写ssh的形式
 
 # 查看结果
-最后只需要在 Hexo 分支上推送代码即可自动部署博客  
-执行过程可以在 Actions 中查看
+最后只需要在 Hexo 分支上推送代码即可自动部署博客，执行过程可以在 Actions 中查看  
+完成后直接访问 https://username.github.io.git 查看博客
 
 ![](./Hexo自动化部署/部署HexoCl.png)
 
