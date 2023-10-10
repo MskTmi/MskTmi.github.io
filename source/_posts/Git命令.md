@@ -7,6 +7,7 @@ tags:
   - Git
 categories:
   - 记录
+  - Git命令
 ---
 
 # Git 导出日志
