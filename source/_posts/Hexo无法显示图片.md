@@ -25,13 +25,14 @@ categories:
 ![](./Hexo无法显示图片/无法加载图片.png)
 
 # 解决方案
-
-1. 使用 hexo-asset-image 给hexo中的资源图片指定绝对路径  
+1. 在 Hexo/_config.yml 中修改 `post_asset_folder` 配置 为 `true` ，将每篇博客的资源文件单独放置在与文章同名的文件夹中
+   > `post_asset_folder: true`
+2. 使用 hexo-asset-image 给hexo中的资源图片指定绝对路径  
    在控制台中输入 `npm install hexo-asset-image --save` 安装
    > 由于 hexo-asset-image 太久未维护，直接使用会有些问题
    >
    > ![](./Hexo无法显示图片/使用hexo-asset-image无法直接加载.png)
-2. 所以需要在 Hexo/_config.yml 中修改 `permalink` 配置
+3. 所以还需要在 Hexo/_config.yml 中修改 `permalink` 配置
    ```yaml
    # permalink: :year/:month/:day/:title/
    permalink: :year/:month/:day/:title.html
@@ -39,7 +40,7 @@ categories:
    > 使博客的链接地址显示 `.html` 后缀
 
    ![](./Hexo无法显示图片/修改_config.png)
-3. 修改工作流配置，将 **判断是否已缓存** 暂时注释，来让 GitHub Actions 安装 hexo-asset-image
+4. 修改工作流配置，将 **判断是否已缓存** 暂时注释，来让 GitHub Actions 安装 hexo-asset-image
    > 未使用 GitHub Actions 无视
 
    ![](./Hexo无法显示图片/修改CL.png)
