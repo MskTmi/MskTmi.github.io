@@ -1,5 +1,5 @@
 ---
-title: 解决PapaParse获取URL文件编码错误
+title: 解决 PapaParse 获取 URL 文件编码错误
 date: 2023-10-12 17:21:30
 updated: 2023-10-12 17:21:30
 tags:
@@ -10,14 +10,14 @@ categories:
   - 记录
   - JavaScript
   - PapaParse
-cover: ./解决PapaParse获取URL文件编码错误/封面.png
+cover: ./2023/10/12/解决PapaParse获取URL文件编码错误/封面.png
 ---
 ​
-`PapaParse` 这个插件虽说强大，可以快速将CSV文件转为JSON格式来渲染表格，但是某些地方真的让人很难受，比如它自带的encoding配置只能对通过input上传的本地文件起作用，而通过URL远程取到的文件不支持...
+`PapaParse` 这个插件虽说强大，可以快速将 CSV 文件转为 JSON 格式来渲染表格，但是某些地方真的让人很难受，比如它自带的 encoding 配置只能对通过 input 上传的本地文件起作用，而通过 URL 远程取到的文件不支持...
 
 # 解决方案
 
-先用 `XMLHttpRequest()` 获取到文件，然后设置 `FileReader()` 改变文件的编码，最后使用PapaParse直接解析。
+先用 `XMLHttpRequest()` 获取到文件，然后设置 `FileReader()` 改变文件的编码，最后使用 PapaParse 直接解析。
 
 要改变文件编码得先知道文件类型，这里给出我的两个解决方案，任选其一即可
 
@@ -104,7 +104,7 @@ public class CheckEncoding : IHttpHandler {
 
 gb2312加utf-8格式就能解决我这边绝大多数的中文编码问题，在无BOM码的情况下只判断是否为utf-8还是相对容易点的
 
-## 成功解决
+# 成功解析
 解析CSV文件，将其转为JSON
 ```JavaScript
 //解析CSV
@@ -130,7 +130,7 @@ function parseCSV(path, encoding) {                   //（路径，编码类型
     })
 }
 ```
-小小的demo：
+## async 的使用
 ```JavaScript
 async function main(path){   //（路径）  //await 需要在async中使用
     //获取文件格式
@@ -142,7 +142,7 @@ async function main(path){   //（路径）  //await 需要在async中使用
 }
 ```
 
-## JSON文件渲染CSV表格
+## JSON 文件渲染 CSV 表格
 ```JavaScript
 //渲染表格
 function paintingTable(File, location) {
