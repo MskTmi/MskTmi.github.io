@@ -1,7 +1,5 @@
 ---
 title: JS更改选中文本样式
-date: 2023-10-10 16:53:41
-updated: 2023-10-10 16:53:41
 tags:
   - 记录
   - JavaScript
@@ -9,6 +7,9 @@ categories:
   - 记录
   - JavaScript
 copyright: false
+abbrlink: 1338592505
+date: 2023-10-10 16:53:41
+updated: 2023-10-10 16:53:41
 ---
 # 方法
 

@@ -1,7 +1,5 @@
 ---
 title: 解决 PapaParse 获取 URL 文件编码错误
-date: 2023-10-12 17:21:30
-updated: 2023-10-12 17:21:30
 tags:
   - 记录
   - JavaScript
@@ -10,7 +8,10 @@ categories:
   - 记录
   - JavaScript
   - PapaParse
-cover: ./2023/10/12/解决PapaParse获取URL文件编码错误/封面.png
+abbrlink: 97572495
+cover: ./2023/10/12/97572495/封面.png
+date: 2023-10-12 17:21:30
+updated: 2023-10-12 17:21:30
 ---
 ​
 `PapaParse` 这个插件虽说强大，可以快速将 CSV 文件转为 JSON 格式来渲染表格，但是某些地方真的让人很难受，比如它自带的 encoding 配置只能对通过 input 上传的本地文件起作用，而通过 URL 远程取到的文件不支持...

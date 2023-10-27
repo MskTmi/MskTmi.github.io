@@ -1,13 +1,14 @@
 ---
 title: 修复Hexo无法显示图片
-date: 2023-10-09 13:50:14
-updated: 2023-10-09 13:50:14
 tags:
   - 教程
   - Hexo
 categories:
   - 教程
   - Hexo
+abbrlink: 4089126318
+date: 2023-10-09 13:50:14
+updated: 2023-10-09 13:50:14
 ---
 
 # 起因
