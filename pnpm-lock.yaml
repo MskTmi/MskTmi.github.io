@@ -9,8 +9,8 @@ dependencies:
     specifier: ^8.10.0
     version: 8.10.0
   hexo:
-    specifier: 7.0.0-rc2
-    version: 7.0.0-rc2
+    specifier: 7.0.0
+    version: 7.0.0
   hexo-abbrlink:
     specifier: ^2.2.1
     version: 2.2.1
@@ -833,8 +833,8 @@ packages:
       js-yaml: 3.14.1
     dev: false
 
-  /hexo-front-matter@4.0.0:
-    resolution: {integrity: sha512-2pQ24inDCdqbxuKQ4cK+1ak0AhSEVC1zTY/kVVyqi5m3lB/wYtAjSWp+elp+FqBmJOynogMpoBnUry/4fJkmAg==}
+  /hexo-front-matter@4.2.1:
+    resolution: {integrity: sha512-sJJI0GNmejYiwBvgnGRKn5V3sbODB4dNPr8jyw2Qp0PRHr4Uuyv8iyxw6WfK3+T7yvzYvJOh+tZ7jnwr2BYARA==}
     engines: {node: '>=14'}
     dependencies:
       js-yaml: 4.1.0
@@ -1003,8 +1003,8 @@ packages:
       strip-indent: 3.0.0
     dev: false
 
-  /hexo@7.0.0-rc2:
-    resolution: {integrity: sha512-+s0lm5e5QKWo+vdb+5C/tDaU0FI0tRqoJze9/2Gvakrykhq96/xfmqBhSo7FvfObgnN1u1ff+pJ66lrWN46NBw==}
+  /hexo@7.0.0:
+    resolution: {integrity: sha512-3iRSYReDcYd+bdCrDYS53aFjR717M+eSwKVXdM1tF2QETi8urcwDdDDoD7Nm2E0trqN4oeoHJ7FoXbn2UsZxqw==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -1012,7 +1012,7 @@ packages:
       archy: 1.0.0
       bluebird: 3.7.2
       hexo-cli: 4.3.1
-      hexo-front-matter: 4.0.0
+      hexo-front-matter: 4.2.1
       hexo-fs: 4.1.1
       hexo-i18n: 2.0.0
       hexo-log: 4.1.0
