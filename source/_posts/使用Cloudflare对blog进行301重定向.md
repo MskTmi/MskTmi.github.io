@@ -40,11 +40,11 @@ cover: ./2023/11/07/3256749390/封面.jpg
 
 ## 设置 DNS 记录（解析）
 直接在 `DNS/记录` 下添加记录即可
-| 类型  |    名称    |       内容       | 代理状态 |  TTL  |
-| :---: | :--------: | :--------------: | :------: | :---: |
-|   A   | example.com |     8.8.8.8      |  已代理  | 自动  |
-|   A   |    www     |     8.8.8.8      |  已代理  | 自动  |
-| CNAME |    blog    | example.github.io |  已代理  | 自动  |
+| 类型  |    名称     |       内容        | 代理状态 |  TTL  |
+| :---: | :---------: | :---------------: | :------: | :---: |
+|   A   | example.com |      8.8.8.8      |  已代理  | 自动  |
+|   A   |     www     |      8.8.8.8      |  已代理  | 自动  |
+| CNAME |    blog     | example.github.io |  已代理  | 自动  |
 
 `CNAME 记录` 设置 blog.example.com 重定向到 example.github.io  
 `A 记录` 设置好需要转发的域名，内容随便写就行
@@ -53,8 +53,8 @@ cover: ./2023/11/07/3256749390/封面.jpg
 
 ## 设置转发规则
 直接在 `规则/页面规则` 下添加记录即可
-|        URL         |   设置   | 状态代码 |           目标 URL           |
-| :----------------: | :------: | :------: | :--------------------------: |
+|         URL         |   设置   | 状态代码 |           目标 URL            |
+| :-----------------: | :------: | :------: | :---------------------------: |
 |   `example.com/*`   | 转发 URL |   301    | `https://blog.example.com/$1` |
 | `www.example.com/*` | 转发 URL |   301    | `https://blog.example.com/$1` |
 
@@ -104,3 +104,12 @@ cover: ./2023/11/07/3256749390/封面.jpg
 也可以在这个网站进行测试：[HTTP状态检测](https://www.dute.org/httpstatus)
 
 ![](./使用Cloudflare对blog进行301重定向/检测.png)
+
+# 善后
+有些插件或配置可能会随着域名的更改而产生问题  
+## Gitalk
+
+在修改完域名后还需要修改 [OAuth Apps](https://github.com/settings/developers) 中 Gitalk 设置的 **Authorization callback URL**  为新的域名地址
+> `https://example.github.io/ -> https://blog.example.com/`
+
+![](./使用Cloudflare对blog进行301重定向/Gitalk.png)
