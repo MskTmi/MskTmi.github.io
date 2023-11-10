@@ -10,7 +10,7 @@ categories:
   - Hexo
 abbrlink: 3256749390
 date: 2023-11-07 16:04:30
-updated: 2023-11-07 16:04:30
+updated: 2023-11-10 19:05:00
 cover: ./2023/11/07/3256749390/封面.jpg
 ---
 
@@ -92,6 +92,12 @@ cover: ./2023/11/07/3256749390/封面.jpg
 
 # 测试重定向配置
 
-可以在这个网站进行测试：[HTTP状态检测](https://www.dute.org/httpstatus)
+{% note warning simple %}  
+域名配置DNS和设置301重定向后建议等待几小时后再进行测试  
+延迟时间取决于多个因素，可能是DNS服务器的缓存、浏览器的缓存、网络的延迟等  
+建议在测试301转跳是时开启控制台并在网络选项中禁用缓存
+{% endnote %}
+
+也可以在这个网站进行测试：[HTTP状态检测](https://www.dute.org/httpstatus)
 
 ![](./使用Cloudflare对blog进行301重定向/检测.png)
