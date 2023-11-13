@@ -10,6 +10,7 @@ copyright: false
 abbrlink: 1338592505
 date: 2023-10-10 16:53:41
 updated: 2023-10-10 16:53:41
+cover: ./2023/10/10/1338592505/js封面.png
 ---
 # 方法
 

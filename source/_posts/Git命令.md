@@ -9,6 +9,7 @@ categories:
 abbrlink: 3038617486
 date: 2023-10-10 14:31:01
 updated: 2023-10-10 14:31:01
+cover: ./2023/10/10/3038617486/git封面.png
 ---
 
 # Git 导出日志
