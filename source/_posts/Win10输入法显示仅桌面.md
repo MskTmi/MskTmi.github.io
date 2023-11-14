@@ -6,7 +6,7 @@ tags:
 categories:
   - 记录
   - Windows
-cover: ./2023/10/26/3385504687/封面.png
+cover: /posts/2023/3385504687/封面.png
 abbrlink: 3385504687
 date: 2023-10-26 09:19:45
 updated: 2023-10-26 09:19:45

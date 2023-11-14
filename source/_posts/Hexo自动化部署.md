@@ -9,7 +9,7 @@ categories:
 abbrlink: 2933477798
 date: 2023-10-07 14:55:45
 updated: 2023-10-07 14:55:45
-cover: ./2023/10/07/2933477798/hexo封面.jpg
+cover: /posts/2023/2933477798/hexo封面.jpg
 ---
 
 # 准备工作

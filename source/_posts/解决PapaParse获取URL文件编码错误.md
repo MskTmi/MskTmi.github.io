@@ -9,7 +9,7 @@ categories:
   - JavaScript
   - PapaParse
 abbrlink: 97572495
-cover: ./2023/10/12/97572495/封面.png
+cover: /posts/2023/97572495/封面.png
 date: 2023-10-12 17:21:30
 updated: 2023-10-12 17:21:30
 ---

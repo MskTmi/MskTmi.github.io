@@ -9,7 +9,7 @@ categories:
 abbrlink: 4089126318
 date: 2023-10-09 13:50:14
 updated: 2023-11-13 10:50:00
-cover: ./2023/10/09/4089126318/404封面.png
+cover: /posts/2023/4089126318/404封面.png
 ---
 
 # 起因
@@ -42,10 +42,11 @@ cover: ./2023/10/09/4089126318/404封面.png
    > 使博客的链接地址显示 `.html` 后缀
 
    ![](./Hexo无法显示图片/修改_config.png)
-4. 修改工作流配置，将 **判断是否已缓存** 暂时注释，来让 GitHub Actions 安装 hexo-asset-image
-   > 未使用 GitHub Actions 无视
 
-   ![](./Hexo无法显示图片/修改CL.png)
+### 注意事项
+使用 GitHub Actions 时如果添加的插件没有生效可以检查一下网站中的 `package.json` 是否存在，如果不存在需要修改工作流配置，将 **判断是否已缓存** 暂时注释，来让 GitHub Actions 安装 hexo-asset-image
+
+[](./Hexo无法显示图片/修改CL.png)
 
 ## 成功！
 
@@ -71,7 +72,9 @@ cover: ./2023/10/09/4089126318/404封面.png
 1. 使用 npm 安装
 2. 在 `_config.yml` 中添加 hexo-abbrlink 配置
    ```yaml
-   # url
+   # Url
+   # - permalink: :year/:month/:day/:title.html
+   # + permalink: :year/:month/:day/:abbrlink.html
    permalink: :year/:month/:day/:abbrlink.html
 
    # abbrlink config 使用 dec 可将标题转为十进制
