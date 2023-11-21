@@ -25,6 +25,15 @@ abbrlink:
   alg: crc32      #support crc16(default) and crc32
   rep: dec        #support dec(default) and hex
 
+# 网站地图
+sitemap:
+  path: 
+    - sitemap.xml
+    - sitemap.txt
+  rel: false
+  tags: false
+  categories: false
+
 # Directory
 source_dir: source
 public_dir: public

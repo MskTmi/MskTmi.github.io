@@ -29,6 +29,9 @@ dependencies:
   hexo-generator-index:
     specifier: ^3.0.0
     version: 3.0.0
+  hexo-generator-sitemap:
+    specifier: ^3.0.1
+    version: 3.0.1
   hexo-generator-tag:
     specifier: ^2.0.0
     version: 2.0.0
@@ -879,6 +882,17 @@ packages:
     engines: {node: '>=14'}
     dependencies:
       hexo-pagination: 3.0.0
+    dev: false
+
+  /hexo-generator-sitemap@3.0.1:
+    resolution: {integrity: sha512-n+0KLNmq6TLbiZPTQF6NY5MbEem/O+DFx0lgQZNQcU4tdjXIZRrQJs+KRKeT66NTkdlYTqb4WwCxswLqQz0crA==}
+    engines: {node: '>=12.13.0'}
+    dependencies:
+      hexo-util: 2.7.0
+      micromatch: 4.0.5
+      nunjucks: 3.2.4
+    transitivePeerDependencies:
+      - chokidar
     dev: false
 
   /hexo-generator-tag@2.0.0:
