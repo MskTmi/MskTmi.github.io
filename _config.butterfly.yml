@@ -10,6 +10,7 @@ nav:
 # Menu 目錄
 menu:
   首頁: / || fas fa-home
+  图库: /Gallery/ || fas fa-images
   目录||fas fa-compass:
     时间轴: /archives/ || fas fa-archive
     标签: /tags/ || fas fa-tags
@@ -601,8 +602,8 @@ google_adsense:
 site_verification:
   # - name: google-site-verification
   #   content: xxxxxx
-  # - name: baidu-site-verification
-  #   content: xxxxxxx
+  - name: baidu-site-verification
+    content: codeva-cCHvkynFVu
 
 # Beautify/Effect (美化/效果)
 # --------------------------------------
@@ -770,7 +771,7 @@ subtitle:
     - 嘤嘤嘤嘤嘤嘤嘤嘤嘤嘤嘤嘤
 # Loading Animation (加載動畫)
 preloader:
-  enable: true
+  enable: false
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
@@ -781,7 +782,7 @@ preloader:
 # wordcount (字數統計)
 # see https://butterfly.js.org/posts/ceeb73f/#字數統計
 wordcount:
-  enable: false
+  enable: true
   post_wordcount: true
   min2read: true
   total_wordcount: true
@@ -870,9 +871,9 @@ pangu:
 # Lazyload (圖片懶加載)
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   field: site # site/post
-  placeholder:
+  placeholder: /img/loading.gif
   blur: false
 
 # PWA
