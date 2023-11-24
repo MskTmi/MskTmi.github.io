@@ -37,7 +37,8 @@ col.UpdateMany(filter, update);
 
 ## $[\<identifier>]符号
 
-这个符号是一个占位符，用来更新数组中匹配arrayFilters条件的所有元素。例如，如果你想要更新books数组中price大于10的元素的discount字段，你可以使用以下代码：
+这个符号是一个占位符，用来更新数组中匹配arrayFilters条件的所有元素。  
+- 如果你想要更新books数组中price大于10的元素的discount字段，你可以使用以下代码：
 
 ```c#
 var filter = Builders<BsonDocument>.Filter.Empty;
@@ -46,6 +47,31 @@ var arrayFilters = new List<ArrayFilterDefinition> {
     new BsonDocumentArrayFilterDefinition<BsonDocument>(new BsonDocument("elem.price", new BsonDocument("$gt", 10)))
 };
 col.UpdateMany(filter, update, new UpdateOptions { ArrayFilters = arrayFilters });
+```
+
+- 如果你想要替换数组caricature中name为DeathNote的元素的全部内容，用一个新的集合来代替，你可以使用以下代码来实现这个功能：
+
+```c#
+// 定义一个新的集合，用来替换原来的元素
+var newBook = new BsonDocument {
+    { "name", "DeathNote" },
+    { "Year", "2004" },
+    { "price", "10" },
+};
+
+// 定义一个过滤条件，用来匹配你想要更新的文档的_id字段
+var filter = Builders<BsonDocument>.Filter.Eq("_id", "01");
+
+// 定义一个更新操作，用来替换caricature数组中name为DeathNote的元素
+var update = Builders<BsonDocument>.Update.Set("caricature.$[elem]", newBook);
+
+// 定义一个数组过滤条件，用来指定你想要替换的数组元素的name值
+var arrayFilters = new List<ArrayFilterDefinition> {
+    new BsonDocumentArrayFilterDefinition<BsonDocument>(new BsonDocument("elem.name", "DeathNote"))
+};
+
+// 执行更新操作，根据过滤条件和数组过滤条件来修改文档的字段的值
+col.UpdateOne(filter, update, new UpdateOptions { ArrayFilters = arrayFilters });
 ```
 
 ## 增加
