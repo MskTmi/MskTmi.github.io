@@ -51,8 +51,8 @@ dependencies:
     specifier: ^3.0.0
     version: 3.0.0
   hexo-theme-butterfly:
-    specifier: ^4.9.0
-    version: 4.9.0
+    specifier: ^4.11.0
+    version: 4.11.0
   hexo-theme-landscape:
     specifier: ^1.0.0
     version: 1.0.0
@@ -979,8 +979,8 @@ packages:
       - supports-color
     dev: false
 
-  /hexo-theme-butterfly@4.9.0:
-    resolution: {integrity: sha512-/aWtJJm90s/Z8RnnJm3U1wH05KTNtUz49TS7Wk8ItPRt2L4+tSIh1h7PPslwEJ5YpNfQH9DUZ7eHf4SzBIQj1w==}
+  /hexo-theme-butterfly@4.11.0:
+    resolution: {integrity: sha512-D4rPeY8445RxsRg0/tCXk5CwYG1ktKHutgLJiIDy/ZYSqIeLgkGOjWQkkgifXDkklBP25Krd6fXUI/NDPu2l2A==}
     dependencies:
       hexo-renderer-pug: 3.0.0
       hexo-renderer-stylus: 3.0.0
