@@ -1,5 +1,5 @@
 ---
-title: Gallery
+title: 图库
 date: 2023-11-23 13:55:38
 updated: 2023-11-23 13:55:38
 comments: false
