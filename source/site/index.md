@@ -21,7 +21,7 @@ updated: 2023-11-25 00:10:00
       descr: 视频同步播放，和你的家人朋友一起在线看视频，无论相隔多远
     - name: 兽音译者
       link: http://hi.pcmoe.net/
-      avatar: http://www.pcmoe.net/favicon.png
+      avatar: https://static.inout.top/iiilab/img/roar_logo.jpg
       descr: 在线兽音/兽语转译
     - name: 让我帮你百度一下
       link: https://mengkunsoft.github.io/lmbtfy/
@@ -45,7 +45,7 @@ updated: 2023-11-25 00:10:00
       descr: 在线PDF合并/压缩、PNG/GIF压缩
     - name: TinyPNG 
       link: https://tinypng.com/
-      avatar: https://tinify.com/static/images/panda-chewing.png
+      avatar: https://tinypng.com/images/apple-touch-icon.png
       descr: 在线图片压缩
     - name: Pandoc
       link: https://www.pandoc.org/
