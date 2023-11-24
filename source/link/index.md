@@ -22,3 +22,5 @@ avatar: https://avatars.githubusercontent.com/u/87525977
 descr: 这里一片空白
 ```
 3. 点击 `Commit changes...` 提交友链
+
+## 也可以直接在评论区留下你的链接~

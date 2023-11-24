@@ -10,11 +10,12 @@ nav:
 # Menu 目錄
 menu:
   首頁: / || fas fa-home
-  图库: /Gallery/ || fas fa-images
   目录||fas fa-compass:
     时间轴: /archives/ || fas fa-archive
     标签: /tags/ || fas fa-tags
     分类: /categories/ || fas fa-folder-open
+  图库: /Gallery/ || fas fa-images
+  网站分享: /site/ || fa-solid fa-globe
   # 清单||fa fa-heartbeat:
   #   音乐: /music/ || fas fa-music
   #   图片: /Gallery/ || fas fa-images
