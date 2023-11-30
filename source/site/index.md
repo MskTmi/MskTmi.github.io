@@ -11,10 +11,6 @@ updated: 2023-11-25 00:10:00
       link: https://airportal.cn
       avatar: https://assets.retiehe.com/ap-icon-192-3.png
       descr: 无需登录或注册在线跨设备传输文件
-    - name: 雀魂麻将
-      link: https://game.maj-soul.com/1/
-      avatar: https://www.maj-soul.com/homepage/img/logotaiwan.png
-      descr: 雀魂麻将网页版
     - name: VideoTogether 
       link: https://2gether.video/
       avatar: https://2gether.video/logo.png
@@ -27,6 +23,18 @@ updated: 2023-11-25 00:10:00
       link: https://mengkunsoft.github.io/lmbtfy/
       avatar: https://www.baidu.com/favicon.ico
       descr: 帮助伸手党 项目地址：https://github.com/mengkunsoft/lmbtfy
+
+- class_name: 休闲娱乐
+  class_desc: 
+  link_list:
+    - name: 雀魂麻将
+      link: https://game.maj-soul.com/1/
+      avatar: https://www.maj-soul.com/homepage/img/logotaiwan.png
+      descr: 雀魂麻将网页版
+    - name: 今天吃什么
+      link: https://eat.msktmi.com/
+      avatar: https://eat.msktmi.com/favicon.ico
+      descr:  解决办公室难题——中午吃啥？
       
 - class_name: 文件处理
   class_desc: 社畜必备
