@@ -25,7 +25,7 @@ updated: 2023-11-25 00:10:00
       descr: 帮助伸手党 项目地址：https://github.com/mengkunsoft/lmbtfy
 
 - class_name: 休闲娱乐
-  class_desc: 
+  class_desc: 最后还是这些最实用
   link_list:
     - name: 雀魂麻将
       link: https://game.maj-soul.com/1/
