@@ -29,7 +29,7 @@ updated: 2023-11-25 00:10:00
   link_list:
     - name: 雀魂麻将
       link: https://game.maj-soul.com/1/
-      avatar: https://www.maj-soul.com/homepage/img/logotaiwan.png
+      avatar: https://game.maj-soul.com/1/icon.png
       descr: 雀魂麻将网页版
     - name: 今天吃什么
       link: https://eat.msktmi.com/
