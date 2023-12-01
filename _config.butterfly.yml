@@ -44,7 +44,7 @@ social:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/favicon.png
+favicon: /img/favicon.ico
 
 # Avatar (頭像)
 avatar:
@@ -909,10 +909,9 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    # - <link rel="stylesheet" href="/xxx.css">
     - <link rel="bookmark" type="image/png" href="https://avatars.githubusercontent.com/u/87525977">
-    - <link rel="icon" href="https://avatars.githubusercontent.com/u/87525977" type="image/png"> 
     - <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/87525977"/>
+    - <link rel="apple-touch-icon-precomposed" href="https://avatars.githubusercontent.com/u/87525977">
     - <meta name="apple-mobile-web-app-capable" content="yes">
     - <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   bottom:
