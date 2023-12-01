@@ -880,13 +880,13 @@ lazyload:
 # PWA
 # See https://github.com/JLHwung/hexo-offline
 # ---------------
-pwa:
-  enable: true
-  manifest: https://avatars.githubusercontent.com/u/87525977
-  apple_touch_icon: https://avatars.githubusercontent.com/u/87525977
-  favicon_32_32: /img/favicon.png
-  favicon_16_16: /img/favicon.png
-  mask_icon: https://avatars.githubusercontent.com/u/87525977
+# pwa:
+#   enable: true
+#   manifest: https://avatars.githubusercontent.com/u/87525977
+#   apple_touch_icon: https://avatars.githubusercontent.com/u/87525977
+#   favicon_32_32: /img/favicon.png
+#   favicon_16_16: /img/favicon.png
+#   mask_icon: https://avatars.githubusercontent.com/u/87525977
 
 # Open graph meta tags
 # https://developers.facebook.com/docs/sharing/webmasters/
@@ -911,6 +911,8 @@ inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
     - <link rel="bookmark" type="image/png" href="https://avatars.githubusercontent.com/u/87525977">
+    - <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/87525977"/>
+    - <meta name="apple-mobile-web-app-capable" content="yes">
   bottom:
     # - <script src="xxxx"></script>
 
