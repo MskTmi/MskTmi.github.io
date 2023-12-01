@@ -910,6 +910,7 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
+    <link rel="bookmark" type="image/png" href="https://avatars.githubusercontent.com/u/87525977">
   bottom:
     # - <script src="xxxx"></script>
 
