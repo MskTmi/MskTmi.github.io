@@ -911,7 +911,6 @@ inject:
   head:
     - <link rel="bookmark" type="image/png" href="https://avatars.githubusercontent.com/u/87525977">
     - <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/87525977"/>
-    - <link rel="apple-touch-icon-precomposed" href="https://avatars.githubusercontent.com/u/87525977">
     - <meta name="apple-mobile-web-app-capable" content="yes">
     - <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   bottom:
