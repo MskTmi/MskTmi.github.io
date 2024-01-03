@@ -914,7 +914,7 @@ inject:
     - <meta name="apple-mobile-web-app-capable" content="yes">
     - <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   bottom:
-    # - <script src="xxxx"></script>
+    - <script src="/js/plugins/start.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
