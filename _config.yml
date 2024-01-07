@@ -62,6 +62,8 @@ live2d:
     vOffset: 0
   mobile:
     show: false
+  react:
+    opacity: 0
 
 # Directory
 source_dir: source

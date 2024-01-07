@@ -6,7 +6,7 @@ window.onload = function () {
         window.addEventListener("scroll", function () {
             // 获取当前滚动条的位置
             var scrollPos = window.scrollY;
-            // 判断是否满足显示或隐藏的条件
+            // 随着滚动条下移live2d
             if (scrollPos >= 400) {
                 // 如果滚动条位置大于等于400显示live2d
                 document.getElementById("live2d-widget").style.bottom = "0px";
@@ -16,4 +16,5 @@ window.onload = function () {
             }
         });
     }
+    document.getElementById("live2d-widget").style.opacity = 1;
 }
