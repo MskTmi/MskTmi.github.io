@@ -31,6 +31,10 @@ updated: 2023-11-25 00:10:00
       link: https://game.maj-soul.com/1/
       avatar: https://game.maj-soul.com/1/icon.png
       descr: 雀魂麻将网页版
+    - name: 红警练兵场
+      link: https://game.bun.sh.cn/
+      avatar: https://game.bun.sh.cn/favicon.ico
+      descr: 红警网页单机版
     - name: 今天吃什么
       link: https://eat.msktmi.com/
       avatar: https://eat.msktmi.com/favicon.ico
@@ -63,6 +67,10 @@ updated: 2023-11-25 00:10:00
 - class_name: 资源下载
   class_desc: 白嫖真棒
   link_list:
+    - name: Z-Library
+      link: https://zh.z-library.se
+      avatar: https://zh.z-library.se/favicon.ico
+      descr: 世界上最大的电子图书馆
     - name: 射手网(伪)
       link: https://secure.assrt.net/
       avatar: https://t9.baidu.com/it/u=1871430555,1826571769&fm=218&app=126&size=f242,150&n=0&f=JPEG&fmt=auto?s=C2338F6046A16AB11A8806E80300A022&sec=1701018000&t=7fcafa9e7a571c63def0590352f27fbb
