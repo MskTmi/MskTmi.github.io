@@ -9,8 +9,8 @@ dependencies:
     specifier: ^8.11.3
     version: 8.11.3
   hexo:
-    specifier: 7.0.0
-    version: 7.0.0
+    specifier: 7.1.0
+    version: 7.1.0
   hexo-abbrlink:
     specifier: ^2.2.1
     version: 2.2.1
@@ -1564,6 +1564,7 @@ packages:
 
   /glob@6.0.4:
     resolution: {integrity: sha512-MKZeRNyYZAVVVG1oZeLaWie1uweH40m9AZwIwxyPbTSX4hHrVYSzLg0Ro5Z5R7XKkIX+Cc6oD1rqeDJnwsB8/A==}
+    requiresBuild: true
     dependencies:
       inflight: 1.0.6
       inherits: 2.0.4
@@ -1987,8 +1988,8 @@ packages:
     resolution: {integrity: sha512-tbo2P9xRWEKQmRf7+XuPjx9It1MnaE26nA+EEb2DN39gK1x+26W7Nm4Iyp4AugQjBWYYDx7OLn4gp1WFxQpQew==}
     dev: false
 
-  /hexo@7.0.0:
-    resolution: {integrity: sha512-3iRSYReDcYd+bdCrDYS53aFjR717M+eSwKVXdM1tF2QETi8urcwDdDDoD7Nm2E0trqN4oeoHJ7FoXbn2UsZxqw==}
+  /hexo@7.1.0:
+    resolution: {integrity: sha512-FFjo8NwqSQVxASSKFGkFUak720sFC/p3IxkDIOHLXQ1axQ5w4ipFU0DNqDzwyb5EJOMFYuMxFcurhm9olQP13A==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -2937,6 +2938,7 @@ packages:
   /ncp@2.0.0:
     resolution: {integrity: sha512-zIdGUrPRFTUELUvr3Gmc7KZ2Sw/h1PiVM0Af/oHB6zgnV1ikqSfRk+TOufi79aHYCW3NiOXmr1BP5nWbzojLaA==}
     hasBin: true
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -3817,6 +3819,7 @@ packages:
   /rimraf@2.4.5:
     resolution: {integrity: sha512-J5xnxTyqaiw06JjMftq7L9ouA448dw/E7dKghkP9WpKNuwmARNNg+Gk8/u5ryb9N/Yo2+z3MCwuqFK/+qPOPfQ==}
     hasBin: true
+    requiresBuild: true
     dependencies:
       glob: 6.0.4
     dev: false
