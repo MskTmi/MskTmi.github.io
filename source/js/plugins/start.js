@@ -17,4 +17,17 @@ window.onload = function () {
         });
     }
     document.getElementById("live2d-widget").style.opacity = 1;
+
+    // 监听窗口大小变化事件
+    window.addEventListener("resize", function () {
+        var width = window.innerWidth;
+
+        // 如果页面宽度小于1650px，隐藏元素
+        if (width < 1650) {
+            document.getElementById("live2d-widget").style.display = "none";
+        } else {
+            // 否则，显示元素
+            document.getElementById("live2d-widget").style.display = "block";
+        }
+    });
 }
