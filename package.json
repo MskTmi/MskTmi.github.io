@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "acorn": "^8.11.3",
-    "hexo": "7.0.0",
+    "hexo": "7.1.1",
     "hexo-abbrlink": "^2.2.1",
     "hexo-asset-image": "^1.0.0",
     "hexo-deployer-git": "^4.0.0",
