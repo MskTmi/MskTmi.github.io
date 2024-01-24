@@ -31,10 +31,10 @@ updated: 2023-11-25 00:10:00
       link: https://game.maj-soul.com/1/
       avatar: https://game.maj-soul.com/1/icon.png
       descr: 雀魂麻将网页版
-    - name: 红警练兵场
-      link: https://game.bun.sh.cn/
-      avatar: https://game.bun.sh.cn/favicon.ico
-      descr: 红警网页单机版
+    - name: Akinator
+      link: https://cn.akinator.com/
+      avatar: https://cn.akinator.com/apple-touch-icon.png
+      descr: 最佳猜人名
     - name: 今天吃什么
       link: https://eat.msktmi.com/
       avatar: https://eat.msktmi.com/favicon.ico
