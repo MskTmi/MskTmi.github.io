@@ -1,9 +1,8 @@
-// 给主页添加scroll事件的监听器
-
 window.onload = function () {
     window.mikoto = document.getElementById("live2d-widget");
-
     window.mikoto.style.opacity = 1;
+
+    // 给主页添加scroll事件的监听器
     if (window.location.pathname == "/") {
         // 在封面图上隐藏
         window.mikoto.style.bottom = "-400px";
