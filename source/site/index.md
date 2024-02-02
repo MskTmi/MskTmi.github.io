@@ -23,6 +23,10 @@ updated: 2023-11-25 00:10:00
       link: https://mengkunsoft.github.io/lmbtfy/
       avatar: https://www.baidu.com/favicon.ico
       descr: 帮助伸手党 项目地址：https://github.com/mengkunsoft/lmbtfy
+    - name: 在线工具大全
+      link: https://www.lddgo.net/
+      avatar: https://www.lddgo.net/img/icon.png
+      descr: 字符|转换|加密|文件|图片处理
 
 - class_name: 休闲娱乐
   class_desc: 最后还是这些最实用
