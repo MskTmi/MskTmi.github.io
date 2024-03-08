@@ -31,6 +31,10 @@ updated: 2023-11-25 00:10:00
       link: https://www.emojiall.com/
       avatar: https://www.emojiall.com/apple-touch-icon.png
       descr: 这里有关于Emoji、Emoji含义等的所有信息
+    - name: EZGIF
+      link: https://ezgif.com/
+      avatar: https://ezgif.com/apple-touch-icon-precomposed.png
+      descr: GIF在线编辑、Video转GIF
 - class_name: 休闲娱乐
   class_desc: 最后还是这些最实用
   link_list:
