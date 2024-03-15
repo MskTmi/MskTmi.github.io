@@ -35,6 +35,7 @@ updated: 2023-11-25 00:10:00
       link: https://ezgif.com/
       avatar: https://ezgif.com/apple-touch-icon-precomposed.png
       descr: GIF在线编辑、Video转GIF
+      
 - class_name: 休闲娱乐
   class_desc: 最后还是这些最实用
   link_list:
@@ -46,10 +47,6 @@ updated: 2023-11-25 00:10:00
       link: https://cn.akinator.com/
       avatar: https://cn.akinator.com/apple-touch-icon.png
       descr: 最佳猜人名
-    - name: 今天吃什么
-      link: https://eat.msktmi.com/
-      avatar: https://eat.msktmi.com/favicon.ico
-      descr:  解决办公室难题——中午吃啥？
       
 - class_name: 文件处理
   class_desc: 社畜必备
@@ -90,4 +87,16 @@ updated: 2023-11-25 00:10:00
       link: http://www.pexels.com/
       avatar: https://www.pexels.com/assets/static/images/meta/apple-touch-icon.png
       descr:  免费素材图片和视频，无需注明归属可以在任何地方使用
+
+- class_name: 夹带私货
+  class_desc: 究竟谁做了这么棒的网站~
+  link_list:
+    - name: 今天吃什么
+      link: https://eat.msktmi.com/
+      avatar: https://eat.msktmi.com/favicon.ico
+      descr:  解决办公室难题——中午吃啥？
+    - name: 红绿灯状态监控
+      link: https://tsc.msktmi.com/
+      avatar: https://tsc.msktmi.com/static/logo.png
+      descr: 避免罚站
 {% endflink %}
