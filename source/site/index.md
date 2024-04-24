@@ -35,6 +35,10 @@ updated: 2023-11-25 00:10:00
       link: https://ezgif.com/
       avatar: https://ezgif.com/apple-touch-icon-precomposed.png
       descr: GIF在线编辑、Video转GIF
+    - name: Save Editor Online
+      link: https://www.saveeditonline.com/
+      avatar: https://www.saveeditonline.com/favicon.ico
+      descr: JRPG、visual novels在线存档修改
       
 - class_name: 休闲娱乐
   class_desc: 最后还是这些最实用
