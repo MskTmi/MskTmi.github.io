@@ -447,8 +447,8 @@ gitalk:
   owner: MskTmi
   admin: MskTmi
   option:
-    proxy: https://proxy.cors.sh/https://github.com/login/oauth/access_token
-
+    proxy: https://gitalk.msktmi.workers.dev/?https://github.com/login/oauth/access_token
+    
 # valine
 # https://valine.js.org
 valine:
