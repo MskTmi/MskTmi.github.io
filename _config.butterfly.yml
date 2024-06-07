@@ -447,7 +447,7 @@ gitalk:
   owner: MskTmi
   admin: MskTmi
   option:
-    proxy: https://gitalk.msktmi.com/?https://github.com/login/oauth/access_token
+    proxy: https://cors-anywhere.msktmi.com/?https://github.com/login/oauth/access_token
 
 # valine
 # https://valine.js.org
