@@ -1,5 +1,5 @@
 - class_name: 友情链接
-  class_desc: 还没有朋友交换链接...
+  class_desc: 好想要...友...友链...
   link_list:
     - name: 幻想朋友
       link: https://msktmi.github.io/404.html
@@ -7,7 +7,7 @@
       descr: 他人还怪好的嘞
     - name: fsry
       link: https://blog.sayentt.com
-      avatar: https://pic.imgdb.cn/item/654985abc458853aef2d6b78.webp
+      avatar: https://avatars.githubusercontent.com/u/53202887
       descr: 已经…不用再继续战斗下去了…
     - name: CvRain
       link: https://cvrain.cloudvl.cn
