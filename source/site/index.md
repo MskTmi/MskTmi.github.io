@@ -49,7 +49,7 @@ updated: 2023-11-25 00:10:00
       descr: 雀魂麻将网页版
     - name: Akinator
       link: https://cn.akinator.com/
-      avatar: https://cn.akinator.com/apple-touch-icon.png
+      avatar: https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bf/9e/99/bf9e9984-7a0c-1e3e-7308-23614c2d2468/AppIcon-Free-0-0-1x_U007emarketing-0-7-0-0-sRGB-85-220.png/246x0w.png
       descr: 最佳猜人名
       
 - class_name: 文件处理
@@ -79,10 +79,6 @@ updated: 2023-11-25 00:10:00
 - class_name: 资源下载
   class_desc: 白嫖真棒
   link_list:
-    - name: Z-Library
-      link: https://zh.z-library.se
-      avatar: https://zh.z-library.se/favicon.ico
-      descr: 世界上最大的电子图书馆
     - name: 射手网(伪)
       link: https://secure.assrt.net/
       avatar: https://t9.baidu.com/it/u=1871430555,1826571769&fm=218&app=126&size=f242,150&n=0&f=JPEG&fmt=auto?s=C2338F6046A16AB11A8806E80300A022&sec=1701018000&t=7fcafa9e7a571c63def0590352f27fbb
