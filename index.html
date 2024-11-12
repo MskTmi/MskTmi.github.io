@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Mst</title><meta name="author" content="MskTmi"><meta name="copyright" content="MskTmi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="Mst">
+<meta property="og:url" content="https://blog.msktmi.com/index.html">
+<meta property="og:site_name" content="Mst">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/87525977">
+<meta property="article:author" content="MskTmi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://avatars.githubusercontent.com/u/87525977"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.msktmi.com/index.html"><link rel="preconnect" href="//cdnjs.cloudflare.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="codeva-cCHvkynFVu"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-center"},
+  infinitegrid: {
+    js: 'https://cdnjs.cloudflare.com/ajax/libs/egjs-infinitegrid/4.11.1/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Mst',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-11-12 09:24:56'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default" /><link rel="bookmark" type="image/png" href="https://avatars.githubusercontent.com/u/87525977"><link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/87525977"/><link rel="stylesheet" href="/css/custom/CloseTitleIcon.css"><meta name="generator" content="Hexo 7.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/img/loading.gif" data-lazy-src="https://avatars.githubusercontent.com/u/87525977" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/site/"><i class="fa-fw fa-solid fa-globe"></i><span> 网站分享</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/images/page_background.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Mst"><span class="site-name">Mst</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-compass"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/site/"><i class="fa-fw fa-solid fa-globe"></i><span> 网站分享</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Mst</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/posts/2024/1086972303.html" title="HomeKit无法添加配件"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/posts/2024/1086972303/%E5%B0%81%E9%9D%A2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HomeKit无法添加配件"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2024/1086972303.html" title="HomeKit无法添加配件">HomeKit无法添加配件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2024-05-27T06:39:26.000Z" title="更新于 2024-05-27 14:39:26">2024-05-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">智能家居</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/HomeAssistant/">HomeAssistant</a></span></div><div class="content">解决过程在使用 HomeAssistant 将米家设备接入 HomeKit 的时候，HomeKit 提示无法添加配件（配件不可连接）  
+简单说一下配置流程：
+
+安装 HomeAssistant 
+安装 HACS 
+安装 Xiaomi Miot Auto 绑定账号 
+安装并配置 HomeKit Bridge 
+扫码连接
+
+前面的配置流程都很顺利的完成了，最后用手机扫码连接时会进行漫长的加载，然后 HomeKit 就会提示无法添加配件，在网上找了好久翻了很多贴子，都没有找到和我同样的问题 
+最后看了 HomeKit Bridge 的官方文档，发现使用 HomeKit Bridge 还需要在防火墙中开放 UDP: 5353 和 TCP: 21063 端口如此基础的问题百度出来的教程里居然没有一个人讲到，在这里记录一下
+
+安装东西还得看官方文档，又交了一个多小时学费😭
+
+其他问题在解决这个问题的过程中还碰到搜到了另一个问题，也是卡在了最后一步，报错提示是未找到配件
+这个问题是因为在配置 docker-compose 时设置了端口转发，应该在 docker-compose 中配置 netwo ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/2024/2169866522.html" title="开一个生态龟缸"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/posts/2024/2169866522/%E5%91%A8%E8%BD%AC%E7%AE%B1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开一个生态龟缸"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2024/2169866522.html" title="开一个生态龟缸">开一个生态龟缸</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2024-11-11T08:45:00.000Z" title="更新于 2024-11-11 16:45:00">2024-11-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%B0%E5%BD%95/%E7%94%9F%E6%80%81%E7%BC%B8/">生态缸</a></span></div><div class="content">材料清单龟缸
+周转箱（1200x500x380cm）1个 ￥114.6
+周转箱（600x400x280cm）1个 ￥29
+
+
+      [{"url":"./2169866522/周转箱.jpg","alt":"Alt text"},{"url":"./2169866522/周转箱嵌套.jpg","alt":"Alt text"}]
+      
+      
+    
+
+
+底沙
+荷塘泥 40kg ￥60
+火山石（3-6mm）10kg ￥14.8
+火山石（5-8mm）10kg ￥14.8
+溪流石（1-3cm）10kg ￥39.7
+火山石可以酌情再加5kg
+
+
+      [{"url":"./2169866522/火山石.jpg","alt":"alt text"},{"url":"./2169866522/火山石尺寸.jpg","alt":"alt text"}]
+      
+      
+    
+
+挺水植物
+植物可以先买回来养着生根
+
+
+薄荷（留兰香）2盆 ￥9.6
+狐尾藻 10颗 ￥4.8
+水菖蒲 5株 ￥5
+水芙蓉 5株 ￥5
+慈姑 3颗 ￥7
+紫芋 2颗 ￥6
+
+净水鱼 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/2024/580597065.html" title="批量替换文件名"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/posts/2024/580597065/%E5%B0%81%E9%9D%A2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="批量替换文件名"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2024/580597065.html" title="批量替换文件名">批量替换文件名</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2024-04-07T04:01:48.000Z" title="更新于 2024-04-07 12:01:48">2024-04-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%B0%E5%BD%95/%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86/">批量处理</a></span></div><div class="content">为了维护攻略图床，每隔半个多月就要更新一部分图片，记录一下批量替换图片的方案  
+重命名并排序首先对批量下载的图片进行预处理这里使用的工具是 Microsoft PowerToys 中的 PowerRename 
+
+Microsoft PowerToys 是一组实用工具，可帮助高级用户调整和简化其 Windows 体验，从而提高工作效率。PowerRename 是一种批量重命名工具
+
+
+使用正则 .* 匹配当前目录下所有图片
+使用替换规则 $&#123;padding=2 start=1&#125; 重命名图片
+
+获取文件名
+新建一个txt，复制以下内容后以 ASNI 编码另存为 Get.bat1DIR *.png *.jpeg *.jpg /B &gt; Filename.txt
+在图片目录下双击运行生成 Filename.txt
+
+替换文件名这边有两种做法，推荐第二种  
+
+使用 Excel 手动选择需要替换的文件名，利用 Excel 公式生成 bat 脚本后批量替换
+使用 Duplicate Photo Cleaner 快速筛选近似的图片，导出数据后做查缺补漏
+
+ExcelDup ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/2024/2114342764.html" title="冷笑话收录"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/posts/2024/2114342764/%E5%B0%81%E9%9D%A2.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="冷笑话收录"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2024/2114342764.html" title="冷笑话收录">冷笑话收录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2024-04-15T06:20:00.000Z" title="更新于 2024-04-15 14:20:00">2024-04-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%B0%E5%BD%95/%E5%86%B7%E7%AC%91%E8%AF%9D/">冷笑话</a></span></div><div class="content">每天听到那么多冷笑话，不收集起来太可惜了</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/2024/1966840030.html" title="猫国建设者(Kittens Game)修改存档"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/posts/2024/1966840030/%E5%B0%81%E9%9D%A2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="猫国建设者(Kittens Game)修改存档"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2024/1966840030.html" title="猫国建设者(Kittens Game)修改存档">猫国建设者(Kittens Game)修改存档</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2024-01-25T06:23:59.000Z" title="更新于 2024-01-25 14:23:59">2024-01-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a></span></div><div class="content">猫国建设者 (Kittens Game)
+网址：游戏 | Wiki
+
+《猫国建设者》是一款由 bloodrizer 开发的文字放置村庄管理网页游戏。在游戏里，你管理着一个村庄的猫咪，它们会不断地获取资源、学习技术。
+使用 JS 连点器获取猫薄荷注意：会解锁成就：不道德的巅峰（作弊玩游戏）
+
+
+
+开启浏览器控制台后直接粘贴下面的代码12345678window.__clickelm = document.getElementsByClassName(&quot;btnContent&quot;)[0];for (var j = 0; j &lt; 10; j++) &#123;    setInterval(function () &#123;        for (var k = 0; k &lt; 500; k++) &#123;            window.__clickelm.click();        &#125;    &#125;, 1);&#125;
+
+由于 JS 是单线程，绑定一个多次点击的定时器的性能要小于绑定多个定时器
+
+
+
+
+
+关闭控制台后继续游戏以 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/2024/1857581413.html" title="尝试使用预制菜替代外卖"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/posts/2024/1857581413/%E6%AF%9B%E5%BC%8F%E7%BA%A2%E7%83%A7%E8%82%89%E4%BA%8C%E5%8F%B7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="尝试使用预制菜替代外卖"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2024/1857581413.html" title="尝试使用预制菜替代外卖">尝试使用预制菜替代外卖</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2024-03-08T02:30:00.000Z" title="更新于 2024-03-08 10:30:00">2024-03-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B5%8B%E8%AF%84/">测评</a></span></div><div class="content">起因最近讨伐预制菜的呼声很高，主要还是因为预制菜冒充现做菜抛开事实不谈，如果点的低价外卖都是预制菜，那为何不直接加入预制菜？选择困难的我在一连看了几个大品牌预制菜后决定丢掉大脑开始踩坑，毕竟吃的东西光看评测也看不出来什么最后在淘宝上入了谷言销量最好的套装，算上自己蒸的米饭平均一餐6块左右
+
+购买信息款式：经典10种价格：57.80 RMB
+
+废话少说，开吃！
+
+注意：本篇文章主观性极强！
+
+
+
+
+  #article-container.post-content h1:before,
+  #article-container.post-content h2:before,
+  #article-container.post-content h3:before,
+  #article-container.post-content h4:before,
+  #article-container.post-content h5:before,
+  #article-container.post-content h6:before {
+      content: '\f2e7';
+}
+
+
+吃 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/2023/530611942.html" title="MongoDB for C#/.NET"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/posts/2023/530611942/%E5%B0%81%E9%9D%A2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MongoDB for C#/.NET"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2023/530611942.html" title="MongoDB for C#/.NET">MongoDB for C#/.NET</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2023-11-22T03:07:52.000Z" title="更新于 2023-11-22 11:07:52">2023-11-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%B0%E5%BD%95/MongoDB/">MongoDB</a></span></div><div class="content">MongoDB 的更新操作符$符号这个符号是一个占位符，用来更新数组中匹配查询条件的第一个元素。例如，如果你想要更新books数组中title为”The Catcher in the Rye”的元素的author字段，你可以使用以下代码：
+123var filter = Builders&lt;BsonDocument&gt;.Filter.Eq(&quot;books.title&quot;, &quot;The Catcher in the Rye&quot;);var update = Builders&lt;BsonDocument&gt;.Update.Set(&quot;books.$.author&quot;, &quot;J.D. Salinger&quot;);col.UpdateOne(filter, update);
+
+$[]符号这个符号是一个占位符，用来更新数组中的所有元素。例如，如果你想要更新books数组中所有元素的price字段，你可以使用以下代码：
+123var filter = Builders&lt;BsonDocument&gt;.Filter.E ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/2023/3256749390.html" title="使用 Cloudflare 对 blog 进行 301 重定向"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/posts/2023/3256749390/%E5%B0%81%E9%9D%A2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用 Cloudflare 对 blog 进行 301 重定向"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2023/3256749390.html" title="使用 Cloudflare 对 blog 进行 301 重定向">使用 Cloudflare 对 blog 进行 301 重定向</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2023-11-10T14:37:00.000Z" title="更新于 2023-11-10 22:37:00">2023-11-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%99%E7%A8%8B/Hexo/">Hexo</a></span></div><div class="content">背景前段时间买了域名，但除了挂博客外目前没有其他用途，于是在折腾一段时间后终于把博客挂在了二级域名（blog）下，并设置 apex 域和 www 子域的301重定向到二级域名下（域名空着也是空着不如先用起来）所以我需要的操作是把 blog 指向 example.github.io ，并将 顶级域名 和 www 指向 blog  
+
+example.com &amp;&amp; www.example.com -&gt; blog.example.com -&gt; example.github.io
+
+由于 GitHub Pages 只能设置一个 CNAME 所以便有了这篇文章~
+301 重定向301重定向多用于迁移网站时将旧的资源重定向到新的域名下，我了解到的实现重定向的方法大致可以分为三类  
+
+使用服务器或是虚拟主机转发，但大多需要额外付费
+新建 GitHub 仓库，利用仓库中的 GitHub Pages 再设置一个 CNAME 重定向，需要几个转发就要创建几个仓库，如果只需要一个重定向可以选择这种方法
+使用其他服务商进行转发，例如白嫖 Cloudflare (～￣▽￣)～ 
+C ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/2023/210468433.html" title="约定式提交"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/posts/2023/210468433/%E5%B0%81%E9%9D%A2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="约定式提交"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2023/210468433.html" title="约定式提交">约定式提交</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2023-10-31T02:35:00.000Z" title="更新于 2023-10-31 10:35:00">2023-10-31</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">代码规范</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/Git/">Git</a></span></div><div class="content">突然发现自己的 commit 记录很乱，就先从添加 类型 开始吧
+约定式提交
+原网址：中文 | 英文 
+
+概述约定式提交规范是一种基于提交信息的轻量级约定。 它提供了一组简单规则来创建清晰的提交历史； 这更有利于编写自动化工具。 通过在提交信息中描述功能、修复和破坏性变更， 使这种惯例与 SemVer 相互对应。
+类型
+
+
+参数
+说明
+
+
+
+feat
+用于表示在代码库中新增了一个功能
+
+
+fix
+用于表示在代码库中修复了一个 bug
+
+
+refactor
+用于重构代码，例如修改代码结构、变量名、函数名等但不修改功能逻辑
+
+
+docs
+用于修改文档，例如修改 README 文件、文档等
+
+
+style
+用于修改代码的样式，例如调整缩进、空格、空行等
+
+
+chore
+用于对非业务性代码进行修改，例如修改构建流程或者工具配置等
+
+
+perf
+用于优化性能，例如提升代码的性能、减少内存占用等
+
+
+test
+用于修改测试用例，例如添加、删除、修改代码的测试用例等
+
+
+build
+用于修改项目构建系统，例如修改依赖库、外部接口或者升级 Node 版本等
+
+
+ci
+用于修改持续集成流程，例如修改 T ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/2023/3385504687.html" title="Win10 输入法显示仅桌面"><img class="post-bg" src= "/img/loading.gif" data-lazy-src="/posts/2023/3385504687/%E5%B0%81%E9%9D%A2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Win10 输入法显示仅桌面"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/2023/3385504687.html" title="Win10 输入法显示仅桌面">Win10 输入法显示仅桌面</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2023-10-26T01:19:45.000Z" title="更新于 2023-10-26 09:19:45">2023-10-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%B0%E5%BD%95/Windows/">Windows</a></span></div><div class="content">在一次普通的重启后我的突然输入法挂掉了，在中重装输入法与重启电脑后依然没有恢复正常，看来是阿三程序员留给我的小惊喜
+问题描述
+无法输入中文且不会跳出输入备选框
+使用 win+space 切换输入法也没有任何反应
+右下角语言栏消失
+语言设置界面显示：”输入法(仅桌面)”
+
+解决方案百度的结果五花八门，大部分可以通过重新运行 ctfmon.exe 解决，但对我却无效，就在任务管理器中查找 CTF 加载程序 (ctfmon.exe) 是否正常运行时发现 Microsoft IME 这个进程 CPU 占用飞起  
+
+直接右键干掉后输入法立马就出来了，但是重启过后依然是同样的问题顺着这个思路去网上找了找解决方案，发现直接在 Windows 设置&gt;时间和语言&gt;语言&gt;首选语言&gt;选项&gt;键盘 中删除微软输入法就可以解决了
+
+重启后一切正常
+
+可能的原因有可能是因为我禁用了 触摸键盘服务（TabletInputService） 的问题，这个服务会在登录界面输入 PIN 时弹出虚拟键盘，但之前几次重启后没有异常，只有这次出现了问题不过好在问题是解决了，既不用被虚拟键盘骚扰也能正 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="https://avatars.githubusercontent.com/u/87525977" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">MskTmi</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/MskTmi"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">没有公告<br/>特此公告</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/2024/1086972303.html" title="HomeKit无法添加配件"><img src= "/img/loading.gif" data-lazy-src="/posts/2024/1086972303/%E5%B0%81%E9%9D%A2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HomeKit无法添加配件"/></a><div class="content"><a class="title" href="/posts/2024/1086972303.html" title="HomeKit无法添加配件">HomeKit无法添加配件</a><time datetime="2024-05-27T06:39:26.000Z" title="发表于 2024-05-27 14:39:26">2024-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2024/2169866522.html" title="开一个生态龟缸"><img src= "/img/loading.gif" data-lazy-src="/posts/2024/2169866522/%E5%91%A8%E8%BD%AC%E7%AE%B1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="开一个生态龟缸"/></a><div class="content"><a class="title" href="/posts/2024/2169866522.html" title="开一个生态龟缸">开一个生态龟缸</a><time datetime="2024-05-15T01:56:40.000Z" title="发表于 2024-05-15 09:56:40">2024-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2024/580597065.html" title="批量替换文件名"><img src= "/img/loading.gif" data-lazy-src="/posts/2024/580597065/%E5%B0%81%E9%9D%A2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="批量替换文件名"/></a><div class="content"><a class="title" href="/posts/2024/580597065.html" title="批量替换文件名">批量替换文件名</a><time datetime="2024-04-07T04:01:48.000Z" title="发表于 2024-04-07 12:01:48">2024-04-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2024/2114342764.html" title="冷笑话收录"><img src= "/img/loading.gif" data-lazy-src="/posts/2024/2114342764/%E5%B0%81%E9%9D%A2.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="冷笑话收录"/></a><div class="content"><a class="title" href="/posts/2024/2114342764.html" title="冷笑话收录">冷笑话收录</a><time datetime="2024-03-08T02:40:03.000Z" title="发表于 2024-03-08 10:40:03">2024-03-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/2024/1966840030.html" title="猫国建设者(Kittens Game)修改存档"><img src= "/img/loading.gif" data-lazy-src="/posts/2024/1966840030/%E5%B0%81%E9%9D%A2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="猫国建设者(Kittens Game)修改存档"/></a><div class="content"><a class="title" href="/posts/2024/1966840030.html" title="猫国建设者(Kittens Game)修改存档">猫国建设者(Kittens Game)修改存档</a><time datetime="2024-01-25T06:23:59.000Z" title="发表于 2024-01-25 14:23:59">2024-01-25</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"><span class="card-category-list-name">代码规范</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/Git/"><span class="card-category-list-name">Git</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%99%E7%A8%8B/"><span class="card-category-list-name">教程</span><span class="card-category-list-count">3</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%99%E7%A8%8B/Hexo/"><span class="card-category-list-name">Hexo</span><span class="card-category-list-count">3</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/"><span class="card-category-list-name">智能家居</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/HomeAssistant/"><span class="card-category-list-name">HomeAssistant</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%B5%8B%E8%AF%84/"><span class="card-category-list-name">测评</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/"><span class="card-category-list-name">游戏</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/" style="font-size: 1.1em; color: #999">智能家居</a> <a href="/tags/Hexo/" style="font-size: 1.37em; color: #99a4b2">Hexo</a> <a href="/tags/HomeAssistant/" style="font-size: 1.1em; color: #999">HomeAssistant</a> <a href="/tags/MongoDB/" style="font-size: 1.1em; color: #999">MongoDB</a> <a href="/tags/%E6%B5%8B%E8%AF%84/" style="font-size: 1.1em; color: #999">测评</a> <a href="/tags/%E4%BF%AE%E6%94%B9/" style="font-size: 1.1em; color: #999">修改</a> <a href="/tags/Windows/" style="font-size: 1.1em; color: #999">Windows</a> <a href="/tags/Cloudflare/" style="font-size: 1.1em; color: #999">Cloudflare</a> <a href="/tags/JavaScript/" style="font-size: 1.37em; color: #99a4b2">JavaScript</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.37em; color: #99a4b2">教程</a> <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 1.1em; color: #999">代码规范</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 1.1em; color: #999">日常</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 1.1em; color: #999">游戏</a> <a href="/tags/%E7%94%9F%E6%80%81%E7%BC%B8/" style="font-size: 1.1em; color: #999">生态缸</a> <a href="/tags/%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86/" style="font-size: 1.1em; color: #999">批量处理</a> <a href="/tags/C/" style="font-size: 1.1em; color: #999">C#</a> <a href="/tags/PapaParse/" style="font-size: 1.1em; color: #999">PapaParse</a> <a href="/tags/%E9%BE%9F%E9%BE%9F/" style="font-size: 1.1em; color: #999">龟龟</a> <a href="/tags/Git/" style="font-size: 1.23em; color: #999ea6">Git</a> <a href="/tags/%E9%A2%84%E5%88%B6%E8%8F%9C/" style="font-size: 1.1em; color: #999">预制菜</a> <a href="/tags/HomeKit/" style="font-size: 1.1em; color: #999">HomeKit</a> <a href="/tags/%E5%86%B7%E7%AC%91%E8%AF%9D/" style="font-size: 1.1em; color: #999">冷笑话</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 1.5em; color: #99a9bf">记录</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">三月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><span class="card-archive-list-count">7</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">15</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-09-19T00:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">11.8k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-11-12T01:24:56.722Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By MskTmi</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">已经到底啦~</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.2.0/instantpage.min.js" type="module"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.8.8/lazyload.iife.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = ["嘤嘤嘤","嘤嘤嘤嘤嘤嘤嘤嘤嘤嘤嘤嘤"]
+        sub.unshift(data.hitokoto, from)
+        typedJSFn.init(sub)
+      } else {
+        document.getElementById('subtitle').textContent = data.hitokoto
+      }
+    })
+}
+typedJSFn.run(subtitleType)
+</script></div><script src="/js/plugins/start.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/canvas-fluttering-ribbon.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"width":250,"height":500,"position":"left","hOffset":30,"vOffset":0},"mobile":{"show":false},"react":{"opacity":0},"log":false});</script></body></html>

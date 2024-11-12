@@ -1,0 +1,112 @@
+#article-container.post-content h1,
+#article-container.post-content h2,
+#article-container.post-content h3,
+#article-container.post-content h4,
+#article-container.post-content h5,
+#article-container.post-content h6 {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#article-container.post-content h1:before,
+#article-container.post-content h2:before,
+#article-container.post-content h3:before,
+#article-container.post-content h4:before,
+#article-container.post-content h5:before,
+#article-container.post-content h6:before {
+    position: absolute;
+    top: calc(50% - 7px);
+    color: #f47466;
+    content: '';
+    left: 0;
+    line-height: 1;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#article-container.post-content h1:hover:before,
+#article-container.post-content h2:hover:before,
+#article-container.post-content h3:hover:before,
+#article-container.post-content h4:hover:before,
+#article-container.post-content h5:hover:before,
+#article-container.post-content h6:hover:before {
+    color: #49b1f5;
+}
+
+#article-container.post-content h1 {
+    padding-left: 28px;
+}
+
+#article-container.post-content h1:before {
+    font-size: 18px;
+}
+
+#article-container.post-content h1:hover {
+    padding-left: 32px;
+}
+
+#article-container.post-content h2 {
+    padding-left: 26px;
+}
+
+#article-container.post-content h2:before {
+    font-size: 16px;
+}
+
+#article-container.post-content h2:hover {
+    padding-left: 30px;
+}
+
+#article-container.post-content h3 {
+    padding-left: 24px;
+}
+
+#article-container.post-content h3:before {
+    font-size: 14px;
+}
+
+#article-container.post-content h3:hover {
+    padding-left: 28px;
+}
+
+#article-container.post-content h4 {
+    padding-left: 22px;
+}
+
+#article-container.post-content h4:before {
+    font-size: 12px;
+}
+
+#article-container.post-content h4:hover {
+    padding-left: 26px;
+}
+
+#article-container.post-content h5 {
+    padding-left: 20px;
+}
+
+#article-container.post-content h5:before {
+    font-size: 10px;
+}
+
+#article-container.post-content h5:hover {
+    padding-left: 24px;
+}
+
+#article-container.post-content h6 {
+    padding-left: 20px;
+}
+
+#article-container.post-content h6:before {
+    font-size: 10px;
+}
+
+#article-container.post-content h6:hover {
+    padding-left: 24px;
+}
