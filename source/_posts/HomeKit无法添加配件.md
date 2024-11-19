@@ -35,7 +35,7 @@ cover: /posts/2024/1086972303/封面.jpg
 
 ## 其他问题
 在解决这个问题的过程中还碰到搜到了另一个问题，也是卡在了最后一步，报错提示是未找到配件  
-![alt text](HomeKit无法添加配件/未找到配件.png)
+![图片](HomeKit无法添加配件/未找到配件.png)
 
 [这个问题](https://github.com/home-assistant/core/issues/15692)是因为在配置 docker-compose 时设置了端口转发，应该在 docker-compose 中配置 `network_mode: host` 使用主机模式
-![alt text](HomeKit无法添加配件/host模式.png)
+![图片](HomeKit无法添加配件/host模式.png)

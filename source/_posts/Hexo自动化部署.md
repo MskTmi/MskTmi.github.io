@@ -25,7 +25,7 @@ cover: /posts/2023/2933477798/hexo封面.jpg
 ## 创建仓库
 1. 创建名称为 `username.github.io` 的仓库
    
-{% note warning simple %}  
+{% note 'warning simple' %}  
 username 是自己的用户名  
 {% endnote %}
 

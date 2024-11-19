@@ -1,7 +1,7 @@
 name: CI
 on:
   push:
-    branches: [ "Hexo-Butterfly" ]
+    branches: [ "Hexo-Solitude" ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,7 +10,7 @@ jobs:
       - name: 检查分支
         uses: actions/checkout@v2
         with:
-          ref: Hexo-Butterfly
+          ref: Hexo-Solitude
 
       - name: 安装 Node.js
         uses: actions/setup-node@v3.8.1
@@ -39,10 +39,6 @@ jobs:
         run: |
           npm install --save
 
-      - name: Replace secrets
-        run: |
-          sed -i 's/OAUTH_TOKEN/${{ secrets.OAUTH_TOKEN }}/' ./_config.butterfly.yml
-
       - name: 配置环境
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
@@ -54,8 +50,22 @@ jobs:
           git config --global user.email "1226594277@qq.com"
           git config --global user.name "MskTmi"
           ssh-keygen -y -f ~/.ssh/id_rsa
+      
+      - name: 清理缓存
+        run: |
+          hexo clean
+       
+      - name: Generate Algolia Index
+        env:
+          HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.ALGOLIA_WRITE_API_KEY }}
+        run: |
+          hexo algolia
+
+      - name: 更新追番追剧
+        run: |
+          hexo bangumi -u
+          hexo cinem -u
 
       - name: 部署 Hexo 
         run: |
-          hexo clean
           hexo d

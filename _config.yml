@@ -34,36 +34,114 @@ sitemap:
   tags: false
   categories: false
 
+# Algolia 搜索
+algolia:
+  applicationID: "5SOX15JD2Z"
+  apiKey: "3b769cf6678244127b27849f0896edeb" # Search API Key
+  indexName: "Hexo"
+
 # Live2D
 ## https://github.com/EYHN/hexo-helper-live2d
-live2d:
+# live2d:
+#   enable: true
+#   # enable: false
+#   scriptFrom: local # 默认
+#   pluginRootPath: live2dw/ # 插件在站点上的根目录(相对路径)
+#   pluginJsPath: lib/ # 脚本文件相对与插件根目录路径
+#   pluginModelPath: assets/ # 模型文件相对与插件根目录路径
+#   # scriptFrom: jsdelivr # jsdelivr CDN
+#   # scriptFrom: unpkg # unpkg CDN
+#   # scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url
+#   tagMode: false # 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中
+#   debug: false # 调试, 是否在控制台输出日志
+#   model:
+#     use: mikoto
+#     # live2d-widget-model-wanko # npm-module package name
+#     # use: wanko # 博客根目录/live2d_models/ 下的目录名
+#     # use: ./wives/wanko # 相对于博客根目录的路径
+#     # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url
+#   display:
+#     width: 250
+#     height: 500
+#     position: left
+#     hOffset: 30
+#     vOffset: 0
+#   mobile:
+#     show: false
+#   react:
+#     opacity: 0
+
+bangumi: # 追番设置
   enable: true
-  # enable: false
-  scriptFrom: local # 默认
-  pluginRootPath: live2dw/ # 插件在站点上的根目录(相对路径)
-  pluginJsPath: lib/ # 脚本文件相对与插件根目录路径
-  pluginModelPath: assets/ # 模型文件相对与插件根目录路径
-  # scriptFrom: jsdelivr # jsdelivr CDN
-  # scriptFrom: unpkg # unpkg CDN
-  # scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url
-  tagMode: false # 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中
-  debug: false # 调试, 是否在控制台输出日志
-  model:
-    use: mikoto
-    # live2d-widget-model-wanko # npm-module package name
-    # use: wanko # 博客根目录/live2d_models/ 下的目录名
-    # use: ./wives/wanko # 相对于博客根目录的路径
-    # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url
-  display:
-    width: 250
-    height: 500
-    position: left
-    hOffset: 30
-    vOffset: 0
-  mobile:
-    show: false
-  react:
-    opacity: 0
+  source: bili
+  bgmInfoSource: "bgmv0"
+  path:
+  vmid: 8803758
+  title: "追番列表"
+  quote: "生命不息，追番不止！"
+  show: 1
+  lazyload: true
+  srcValue: "__image__"
+  lazyloadAttrName: "data-src=__image__"
+  loading:
+  showMyComment: false
+  pagination: false
+  metaColor:
+  color:
+  webp:
+  progress:
+  progressBar:
+  extraOrder:
+  order: latest
+  proxy:
+    host: "代理host"
+    port: "代理端口"
+  extra_options:
+    key: value
+  coverMirror:
+cinema: # 追剧设置
+  enable: true
+  path:
+  vmid: 8803758
+  title: "追剧列表"
+  quote: "生命不息，追剧不止！"
+  show: 1
+  lazyload: true
+  srcValue: "__image__"
+  lazyloadAttrName: "data-src=__image__"
+  loading:
+  metaColor:
+  color:
+  webp:
+  progress:
+  progressBar:
+  extraOrder:
+  order:
+  extra_options:
+    key: value
+  coverMirror:
+game: # 游戏设置，仅支持source: bgmv0
+  enable: false
+  path:
+  source: bgmv0
+  vmid: 8803758
+  title: "游戏列表"
+  quote: "生命不息，游戏不止！"
+  show: 1
+  lazyload: true
+  srcValue: "__image__"
+  lazyloadAttrName: "data-src=__image__"
+  loading:
+  metaColor:
+  color:
+  webp:
+  progress:
+  progressBar:
+  extraOrder:
+  order:
+  extra_options:
+    key: value
+  coverMirror:
 
 # Directory
 source_dir: source
@@ -88,15 +166,14 @@ render_drafts: false
 post_asset_folder: true
 relative_link: false
 future: true
+syntax_highlighter: highlight.js
 highlight:
-  enable: true
   line_number: true
   auto_detect: false
   tab_replace: ""
   wrap: true
   hljs: false
 prismjs:
-  enable: false
   preprocess: true
   line_number: true
   tab_replace: ""
@@ -142,11 +219,11 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: butterfly
+theme: solitude
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
   repo: git@github.com:MskTmi/MskTmi.github.io.git
-  branch: Page-Butterfly
+  branch: Page-Solitude

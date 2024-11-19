@@ -1,0 +1,19 @@
+.article-container .note p {
+    font-size: 0.7rem;
+    line-height: 1.7;
+    font-weight: 400;
+    margin: 0;
+    text-align: left;
+    letter-spacing: 0.6px;
+}
+
+.note:not(.no-icon) {
+    padding-left: 0.6rem;
+}
+
+.note.flat {
+    border: initial !important;
+    border-left: 5px solid !important;
+    background-color: #f9f9f9;
+    color: #4c4948;
+}

@@ -18,7 +18,7 @@ abbrlink: 1966840030
 《猫国建设者》是一款由 bloodrizer 开发的文字放置村庄管理网页游戏。在游戏里，你管理着一个村庄的猫咪，它们会不断地获取资源、学习技术。
 
 # 使用 JS 连点器获取猫薄荷
-{% note warning flat %}
+{% note 'warning flat' %}
 注意：会解锁成就：不道德的巅峰（作弊玩游戏）
 {% endnote %}
 
@@ -35,35 +35,35 @@ for (var j = 0; j < 10; j++) {
 ```
 > 由于 JS 是单线程，绑定一个多次点击的定时器的性能要小于绑定多个定时器
 
-![Alt text](猫国建设者-Kittens-Game-修改存档/连点.png)
+![图片](猫国建设者-Kittens-Game-修改存档/连点.png)
 
 2. 关闭控制台后继续游戏以提高性能
 
 ---
 
 # 修改游戏存档
-{% note danger flat %}
+{% note 'danger flat' %}
 警告：修改存档获取资源后游戏将立即索然无味！
 {% endnote %}
 
-![Alt text](猫国建设者-Kittens-Game-修改存档/不道德的巅峰.png)
+![图片](猫国建设者-Kittens-Game-修改存档/不道德的巅峰.png)
 
 **<center>既然你已经做好了索然无味的准备，那么来吧！</center>**
 
 ## 导出存档
 
 1. 游戏设置中导出的存档是进行过字符串压缩的，我们可以直接在浏览器缓存中获取原始Json
-![Alt text](猫国建设者-Kittens-Game-修改存档/导出.png) 
+![图片](猫国建设者-Kittens-Game-修改存档/导出.png) 
 > F12开启控制台
 
 2. 拿到Json后就可以开始修改数值了
-![Alt text](猫国建设者-Kittens-Game-修改存档/修改数据.png) 
+![图片](猫国建设者-Kittens-Game-修改存档/修改数据.png) 
 > JSON在线解析：https://www.json.cn/
 ## 转码并导入
 
  翻看[源码](https://github.com/zhaolinxu/cat-zh/blob/master/game.js#L2316)会发现存档使用了 LZString 进行压缩
 
- ![Alt text](猫国建设者-Kittens-Game-修改存档/源码.png)
+ ![图片](猫国建设者-Kittens-Game-修改存档/源码.png)
 
  我们可以直接在控制台中调用 `compressLZData()` 方法加密修改后的存档
 
@@ -75,7 +75,7 @@ game.compressLZData('这里填入修改后的Json',false);
    
 > 记得删除数据的前后引号！
 
-![Alt text](猫国建设者-Kittens-Game-修改存档/控制台导入.png)
+![图片](猫国建设者-Kittens-Game-修改存档/控制台导入.png)
 
 
 
