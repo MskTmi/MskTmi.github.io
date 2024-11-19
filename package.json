@@ -14,7 +14,7 @@
   "dependencies": {
     "hexo": "^7.3.0",
     "hexo-abbrlink": "^2.2.1",
-    "hexo-algolia": "^1.3.2",
+    "hexo-algoliasearch": "^2.0.1",
     "hexo-asset-image": "^1.0.0",
     "hexo-bilibili-bangumi": "^1.10.7",
     "hexo-deployer-git": "^4.0.0",

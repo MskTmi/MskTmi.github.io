@@ -35,10 +35,26 @@ sitemap:
   categories: false
 
 # Algolia 搜索
+# algolia:
+#   applicationID: "5SOX15JD2Z"
+#   apiKey: "3b769cf6678244127b27849f0896edeb" # Search API Key
+#   indexName: "Hexo"
+
 algolia:
-  applicationID: "5SOX15JD2Z"
-  apiKey: "3b769cf6678244127b27849f0896edeb" # Search API Key
-  indexName: "Hexo"
+  appId: "5SOX15JD2Z"
+  apiKey: "3b769cf6678244127b27849f0896edeb"
+  adminApiKey: "ALGOLIA_WRITE_API_KEY"
+  chunkSize: 5000
+  indexName: "Mst"
+  fields:
+    - content:strip:truncate,0,500
+    - excerpt:strip
+    - gallery
+    - permalink
+    - photos
+    - slug
+    - tags
+    - title
 
 # Live2D
 ## https://github.com/EYHN/hexo-helper-live2d

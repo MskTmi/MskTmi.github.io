@@ -49,6 +49,7 @@ nav:
     分享:
       我的装备: /equipment/ || fas fa-toolbox
       网站分享: /site/ || fas fa-globe
+      图库: /Gallery/ || fas fa-image
     我的:
       我的追番: /bangumis/ || fa-brands fa-bilibili
       我的追剧: /cinemas/ || fas fa-tv
@@ -74,7 +75,7 @@ hometop:
   enable: true
   banner:
     title: 分享日常 <br> 记录生活 # 标题
-    url: 顺便摸摸鱼# 小字
+    url: 顺便摸摸鱼 # 小字
     icon:
       HTML: # name
         img: https://i.postimg.cc/vBWVnY8q/html.png # url
@@ -301,7 +302,7 @@ post:
   meta:
     # Release date
     # 发布日期
-    date: false
+    date: true
     # Update date
     # 更新日期
     updated: true
