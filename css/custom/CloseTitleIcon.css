@@ -1,0 +1,27 @@
+#article-container.post-content h1,
+#article-container.post-content h2,
+#article-container.post-content h3,
+#article-container.post-content h4,
+#article-container.post-content h5,
+#article-container.post-content h6 {
+    padding-left: 0px;
+}
+
+#article-container.post-content h1:before,
+#article-container.post-content h2:before,
+#article-container.post-content h3:before,
+#article-container.post-content h4:before,
+#article-container.post-content h5:before,
+#article-container.post-content h6:before {
+    padding-left: 0px;
+    content: '';
+}
+
+#article-container.post-content h1:hover,
+#article-container.post-content h2:hover,
+#article-container.post-content h3:hover,
+#article-container.post-content h4:hover,
+#article-container.post-content h5:hover,
+#article-container.post-content h6:hover {
+    padding-left: 0px;
+}
