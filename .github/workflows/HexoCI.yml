@@ -1,7 +1,7 @@
 name: CI
 on:
   push:
-    branches: [ "Hexo" ]
+    branches: [ "Hexo-Butterfly" ]
 jobs:
   build:
     runs-on: ubuntu-latest
