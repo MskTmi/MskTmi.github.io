@@ -10,7 +10,7 @@ jobs:
       - name: 检查分支
         uses: actions/checkout@v2
         with:
-          ref: Hexo
+          ref: Hexo-Butterfly
 
       - name: 安装 Node.js
         uses: actions/setup-node@v3.8.1
