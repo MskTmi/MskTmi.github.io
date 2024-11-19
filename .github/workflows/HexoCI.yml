@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: 安装依赖
+      - name: 安装项目依赖
         # if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         run: |
           npm install --save
@@ -55,10 +55,9 @@ jobs:
         run: |
           hexo clean
        
-      - name: Generate Algolia Index
-        env:
-          HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.ALGOLIA_WRITE_API_KEY }}
+      - name: 更新 Algolia 索引
         run: |
+          sed -i 's/ALGOLIA_WRITE_API_KEY/${{ secrets.ALGOLIA_WRITE_API_KEY }}/' ./_config.solitude.yml
           hexo algolia
 
       - name: 更新追番追剧
