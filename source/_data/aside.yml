@@ -1,0 +1,30 @@
+- name: clustrmaps
+  title: 访客地图
+  id: card-clustrmaps
+  content_html: |
+    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=KvVWVYN1440XNO9H599ZU2r9V6w-pF2z-9mkWnhU_wI"></script>
+
+- name: history
+  title: 那年今日
+  class: card-history
+  id:
+  icon: fas fa-clock
+  content_class:
+  content_id: history-baidu
+  content_css: "height:80px;overflow:hidden"
+  content_html: |
+    <div class="history_swiper-container" id="history-container" style="width: 100%;height: 100%;margin-top: 6px">
+        <div id="history_container_wrapper" class="swiper-wrapper"></div>
+    </div>
+
+- name: welcome
+  title: 来访者
+  class: card-welcome
+  id:
+  icon: fas fa-location-dot
+  content_id: welcome-info
+  content_css: "overflow:hidden"
+  content_html: |
+    <div class="welcome_swiper-container" id="welcome-container" style="width: 100%;height: 100%;margin-top: 6px">
+        <div id="welcome_container_wrapper" class="swiper-wrapper"></div>
+    </div>

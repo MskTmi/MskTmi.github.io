@@ -123,8 +123,8 @@ aside:
   # Sticky: Fixed position / noSticky: Not fixed position
   # Sticky: 固定位置 / noSticky: 不固定位置
   home: # on the homepage
-    noSticky: "about"
-    Sticky: "allInfo"
+    noSticky: "about,welcome,history," # 信息卡,来访者,那年今日
+    Sticky: "clustrmaps,allInfo" # 访客地图,网站信息
   post: # on the article page
     noSticky: "about"
     Sticky: "newestPost"
@@ -458,7 +458,7 @@ related_post:
 # Custom right menu
 # 自定义右键菜单
 right_menu:
-  enable: false
+  enable: true
   # Whether to display the hot comment switch.
   # 是否显示热门评论开关
   commentBarrage: false
@@ -471,11 +471,11 @@ right_menu:
   # Custom list
   # 自定义列表
   custom_list:
-    # - name: 随机文章
-    #   click: toRandomPost()
-    #   id: menu-randomPost
-    #   class:
-    #   icon: fas fa-tower-broadcast
+    - name: 随机文章
+      click: toRandomPost()
+      id: menu-randomPost
+      class:
+      icon: fas fa-tower-broadcast
     # - name: 全部分类
     #   click: pjax.loadUrl('/categories/') # External links with window.open, pjax can not request cross-domain content.
     #   id:
@@ -585,7 +585,7 @@ footer:
     #   Copyright: /copyright/
 
   # 随机友链
-  randomlink: false # 随机友链
+  randomlink: true # 随机友链
   # 许可证
   license: # https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh # 许可证
 
@@ -603,7 +603,7 @@ footer:
 # 404 页面
 errorpage:
   img: /img/404.avif
-  text: =awa= Page Not Found # Text
+  text: 这里什么都没有哦~ # Text
   recommendList: true
 # --------------------------- end ---------------------------
 
@@ -787,12 +787,17 @@ extends:
     #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
     - <meta name="apple-mobile-web-app-capable" content="yes">
     - <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    - <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
     - <link rel="stylesheet" href="/css/custom/fontawesome_ico.css">
     - <link rel="stylesheet" href="/css/custom/note.css">
+    - <link rel="stylesheet" href="/css/custom/card-history.css">
   # Insert in body
   # 插入到 body
   body:
-  #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+    - <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    - <script defer pjax src="/js/plugins/card-history.js"></script>
+    - <script defer pjax src="/js/plugins/card-welcome.js"></script>
+  # - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
