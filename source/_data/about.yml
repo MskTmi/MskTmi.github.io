@@ -1,0 +1,167 @@
+authorinfo:
+  leftTags:
+    - 💻 技术爱好者 
+    - 🏠 智能家居爱好者
+    - 🧰 工具人
+  rightTags:
+    - 拯救派 📡
+    - All In Boom  💣
+    - 坚强而沉默 😶
+  image: https://weavatar.com/avatar/9e431bf36d8a8f03dca1f1b64b9c1c6b?s=512
+
+title: 关于本站
+
+contentinfo: # 顶部个人信息展示
+  sup: 你好，很高兴认识你👋
+  name: 我是 MskTmi # 名称
+  title: 是一名软件工程师、独立开发者、博主 # 介绍
+  tip: 热爱、学习、分享
+  slogan: 想要创造
+  mask:
+    - 好玩的游戏
+    - 出色的设计
+    - 高效的交互
+    - 优雅的代码
+    - 人性化的用户体验
+
+skills: # 根据需求添加
+  title: 技能
+  subtitle: 开启创造力
+  tags:
+    - title: HTML
+      icon: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/HTML.png
+      color: "#e9572b"
+    - title: Javascript
+      icon: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/JS.png
+      color: "#f7cb4f"
+    - title: Kotlin
+      icon: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/kotlin-logo.svg
+      color: "#ffffff"
+    - title: Git
+      icon: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/git.png
+      color: "#df5b40"
+    - title: Docker
+      icon: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/docker.png
+      color: "#57b6e6"
+    - title: Visual Studio
+      icon: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
+      color: "#ffffff"
+    - title: Unity
+      icon: ./images/unity.svg
+      color: "#232B38"
+    - title: Photoshop
+      icon: ./images/photoshop.svg
+      color: "#ffffff"
+
+careers:
+  title: 生涯
+  subtitle: 无限进步
+  items:
+    - school: 学习
+      major: 探索
+      color: "#117BFB"
+    - school: 工作
+      major: 网站开发
+      color: "#FB1111"
+  image: ./images/经历.png
+  
+personalities:
+  tips: 性格
+  title: 逻辑学家
+  color: "#876099"
+  type: INTP-A
+  image: ./images/INTP-A.svg
+  link: https://www.16personalities.com/
+  linkText: 16personalities
+  typeLink: https://www.16personalities.com/intp-personality
+  typeName: 逻辑学家
+  myphoto: ../images/page_background_min.jpg
+
+motto:
+  title: 座右铭
+  prefix: 破釜沉舟，
+  content: 砥砺前行。
+
+expertise:
+  title: 特长
+  prefix: 数学、物理、化学
+  specialist: 专家
+  content: 学习能力
+  level: MAX
+
+game:
+  - title: 游戏爱好
+    img: https://puui.qpic.cn/vpic_cover/t35319v7vqe/t35319v7vqe_1694560063_hz.jpg/1280
+    subtitle: League of Legends
+    box_shadow: '0 -69px 203px 11px #04120f inset'
+    # icon_group:
+    #   - https://7.isyangs.cn/66/6738b472ce11f-66.webp
+    #   - https://7.isyangs.cn/66/6738b48045a5b-66.webp
+    tips_left: 无限火力爱好者
+    tips_right: 艾欧尼亚
+  - title: 最近在玩
+    img: ./images/bg3.jpg
+    subtitle: 博德之门 3
+    box_shadow: '0 -69px 203px 11px #04120f inset'
+    tips_left: MskTmi
+    tips_right: "973061951"
+
+likes:
+  - type: like-technology
+    bg: ./images/科技.jpg
+    tips: 关注偏好
+    title: 数码科技
+    subtips: 
+    button: true
+    button_text: 我的装备
+    button_link: /equipment/
+  - type: like-music
+    bg: ./images/日常.jpg
+    tips: 影视偏好
+    title: 番剧
+    box_shadow: '0'
+    subtips: ID难取
+    button: true
+    button_text: 我的追番
+    button_link: /bangumis/
+
+tj: # 统计
+  provider: 51la # 值为 51la（51la网站统计）或 baidu（百度统计）
+  url: https://v6-widget.51.la/v6/3KUds0Z4vheRFDqj/quote.js # 需要到51la官网注册自行获取 or 自行搭建 Heo 的 百度统计项目，填写访问地址即可
+  img: https://7.isyangs.cn/1/65eb2e9109826-1.png # 背景
+
+oneself: # 按需填写
+  location: 中国，上海 # 所在位置
+  birthYear: 2001 # 生日
+  university: 编程经验 
+  major: 四年
+  occupation: 全栈开发 # 职位
+  map: # 你所在位置的地图
+    light: ../about/images/sh_d.png # 白天
+    dark: ./images/sh_n.png # 夜晚
+
+# 自定义
+cause:
+  tip: 心路历程
+  title: 为什么建站？
+  content:
+    <br>
+    我希望通过这个网站，分享在编程和开发中遇到的各种<b>问题及解决方法</b>，同时记录一些生活中的<b>经验与启发</b>，展示有趣的项目和技术探索的成果。
+    <br>
+    我希望这些内容能够帮助更多的人<b>解决问题、获得灵感，甚至是节省时间</b>，也希望借此在互联网上留下属于我的一份足迹，让知识的传递与价值的积累成为我成长旅程的一部分。
+    <br>
+    
+tenyear:
+  tips: 十年之约
+  title: 先来一个小目标
+  start: 2023-09-19
+  end: 2033-09-19
+
+award:
+  enable: false
+  description: 感谢赞赏的人，因为你们，让我感受到写博客这件事情能够给你们创造了价值。这会让我在这条路上走得更远。
+  tips: 总金额：¥ {sum}，将全部用于博客的维护和更新。 # 必须带 {sum}，否则无法显示总金额
+rewardList: # 底部捐赠
+  - name: xxx
+    money: 5
+    time: 2023-04-20
