@@ -1,0 +1,19 @@
+- class_name: 生产力
+  description: 提升自己生产效率的硬件设备
+  equipment_list:
+    - name: Bestcom N100 Pro
+      specification: 性价比超高的 N100 迷你主机 （已下架）
+      description: 准系统 699 元的售价，含有双 2.5G 网口、全功能 TYPE-C、 可扩展 2.5 寸 HHD，All In Boom 的最佳实现
+      image: ./images/n100.png
+    - name: TOGAR T9 三香版 凯华孤岛轴
+      specification: 你拿货出来卖啊！
+      description: 这个价位段难得的静音轴体，非常适合办公室码字
+      image: ./images/TG_t90.png
+- class_name: 出行
+  description: 用来出行的实物及设备
+  equipment_list:
+    - name: AirPods Pro
+      specification: 2020 年购入的一代战到现在
+      description: 配合苹果生态非常方便，普通玩家退烧首选，用了两年发现批次在召回名单中，售后换新了耳机，续航++
+      image: https://7.isyangs.cn/1/65eb3d84dea25-1.png
+      link: https://www.apple.com.cn/airpods-pro/
