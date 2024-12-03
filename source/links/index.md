@@ -6,7 +6,7 @@ type: "links"
 ---
 ## 来互换友链吧~
 
-1. [点击这里添加友链](https://github.com/MskTmi/MskTmi.github.io/edit/Hexo/source/_data/link.yml) 
+1. [点击这里添加友链](https://github.com/MskTmi/MskTmi.github.io/edit/Hexo-Solitude/source/_data/links.yml) 
 2. 可以按我的友链为示例添加自己的链接
 
     ```yaml 
