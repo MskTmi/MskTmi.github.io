@@ -54,16 +54,16 @@ jobs:
       - name: 清理缓存
         run: |
           hexo clean
-       
-      - name: 更新 Algolia 索引
-        run: |
-          sed -i 's/ALGOLIA_WRITE_API_KEY/${{ secrets.ALGOLIA_WRITE_API_KEY }}/' ./_config.yml
-          hexo algolia
-
+          
       - name: 更新追番追剧
         run: |
           hexo bangumi -u
           hexo cinem -u
+          
+      - name: 更新 Algolia 索引
+        run: |
+          sed -i 's/ALGOLIA_WRITE_API_KEY/${{ secrets.ALGOLIA_WRITE_API_KEY }}/' ./_config.yml
+          hexo algolia
 
       - name: 部署 Hexo 
         run: |
