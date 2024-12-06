@@ -1,7 +1,7 @@
 let ipLocation; // 确保 ipLocation 在全局范围内定义
 
 // 进行 fetch 请求
-fetch('https://api.76.al/api/ip/query?key=c5qapItrwhSsgMorEK6c7FepG1') //申请key:https://api.76.al
+fetch('https://api.76.al/api/ip/query?key=FlY5I6P3Zj6flKBgpY9bMV5rwX') //申请key:https://api.76.al
 	.then(response => {
 		if (!response.ok) {
 			throw new Error('Network response was not ok');
