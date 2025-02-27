@@ -67,15 +67,13 @@ for (var j = 0; j < 10; j++) {
 
  我们可以直接在控制台中调用 `compressLZData()` 方法加密修改后的存档
 
-```JavaScript
-game.compressLZData('这里填入修改后的Json',false);
-```
-1. 补全上面代码后输入控制台获取压缩后的Json数据
-2. 在游戏设置中导入存档
-   
-> 记得删除数据的前后引号！
+1. 修改完成后点击压缩按钮将 Json 压缩为一行，避免复制时出现换行符影响下一步
+    ![图片](猫国建设者-Kittens-Game-修改存档/注意事项.png)
+2. 补全下面代码后输入控制台获取压缩后的Json数据
+   ```JavaScript
+   game.compressLZData('这里填入修改后的Json',false);
+   ```
+3. 在游戏设置中导入存档
+   > 记得删除数据的前后引号！
 
-![图片](猫国建设者-Kittens-Game-修改存档/控制台导入.png)
-
-
-
+   ![图片](猫国建设者-Kittens-Game-修改存档/控制台导入.png)
