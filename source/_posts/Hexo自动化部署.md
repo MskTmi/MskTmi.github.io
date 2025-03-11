@@ -11,6 +11,8 @@ date: 2023-10-07 14:55:45
 updated: 2023-10-07 14:55:45
 cover: /posts/2023/2933477798/hexo封面.jpg
 ---
+本篇教程为源码与网页同仓库方案  
+源码与渲染后的博客静态页面放在同一个仓库的不同分支，  以 Hexo 分支为源码，master 分支为渲染后的静态页面
 
 # 准备工作
 
@@ -18,11 +20,8 @@ cover: /posts/2023/2933477798/hexo封面.jpg
 2. 安装 Hexo
 3. 熟练使用 Baidu 或 Bing 大小姐
 
-# 源码与网页同仓库方案
+# 创建仓库
 
-源码与渲染后的博客静态页面放在同一个仓库的不同分支，  以 Hexo 分支为源码，master 分支为渲染后的静态页面
-
-## 创建仓库
 1. 创建名称为 `username.github.io` 的仓库
    
 {% note 'warning simple' %}  
@@ -48,11 +47,12 @@ git push origin HEAD -u
 ```
 > 推送后仓库中有两个分支，一个为默认的master分支，另一个新建的hexo分支，之后 hexo deploy 部署的静态页面会覆盖 master 分支中的文件，这样 master 分支中就是最后 `/public` 下的静态页面
 
-## 设置 GitHub Pages
+# 设置 GitHub Pages
 将 GitHub Pages 绑定到 master 分支
 
 ![](./Hexo自动化部署/GitHubPages.png)
-# 配置 Deploy keys
+# 配置部署密钥（Deploy keys）
+> 即授予对单个存储库的访问权限的 SSH 密钥
 ## 生成 ssh key
 > 已绑定公钥请跳过这一步，该命令会覆盖旧的密钥
 
@@ -64,15 +64,17 @@ git push origin HEAD -u
 
 ## 添加公钥
 1. 打开 `username.github.io` 仓库中的 Setting 并找到 Deploy keys 选项
-
-![](./Hexo自动化部署/DeployKeys位置.png)
-
+   ![](./Hexo自动化部署/DeployKeys位置.png)
 2. 在 Title 中填写 `HEXO_DEPLOY_PUB` 作为公钥名，并将 `id_rsa.pub` 中的内容复制到 key 中
 3. 勾选 `Allow write access` 后点击添加
 
 ![](./Hexo自动化部署/添加DeployKeys.png)
 
 # 配置秘密变量（GitHub Secrets）
+> 借助密钥可以在组织、存储库或存储库环境中存储敏感信息。
+
+在下一步的 GitHub 工作流配置中需要添加私钥来完成推送，但由于 GitHub 工作流配置文件是公开的，我们不能将私钥暴露在互联网中，所以需要添加秘密变量来隐藏私钥
+
 ## 添加私钥
 1. 继续在 Setting 中找到 Secrets and variables\Actions 选项
 
@@ -83,11 +85,12 @@ git push origin HEAD -u
 ![](./Hexo自动化部署/NewSecret.png)
 
 > Name 为秘密变量名，Secret 为秘密变量的值
-## 安全
-> 也可将博客配置文件中的敏感信息替换为秘密变量  
 
-示例：  
-将 `_config.butterfly.yml` 中 Gitalk 所需的 client_secret 值改为秘密变量
+## *其他插件
+> 也可将博客配置文件中的敏感信息替换为秘密变量，例如：密钥，API等  
+
+这里以配置 Gitalk 为示例：  
+1. 将 `_config.butterfly.yml` 中 Gitalk 所需的 client_secret 值改为秘密变量
 ```yaml
 # gitalk
 # https://github.com/gitalk/gitalk
@@ -98,15 +101,16 @@ gitalk:
   owner: username
   admin: username
   option:
-```
-1. 在项目仓库的 Setting\Secrets and variables\Actions 中添加 Name 为 OAUTH_TOKEN 的秘密变量
-2. 在 HexoCl.yml 中添加
+``` 
+2. 在项目仓库的 Setting\Secrets and variables\Actions 中添加 Name 为 OAUTH_TOKEN 的秘密变量
+3. 在 HexoCl.yml 中添加
 ```yaml
 - name: Replace secrets
   run: |
     sed -i 's/OAUTH_TOKEN/${{ secrets.OAUTH_TOKEN }}/' ./_config.butterfly.yml
 ```
-> 可以将 `_config.butterfly.yml` 文件中的 `OAUTH_TOKEN` 字符替换为 `${{ secrets.OAUTH_TOKEN }}` 变量的值
+> 以上流程可以将 `_config.butterfly.yml` 文件中的 `OAUTH_TOKEN` 字符替换为 `${{ secrets.OAUTH_TOKEN }}` 变量的值
+
 # GitHub 工作流配置
 1. 在 Hexo 目录或 GitHub 中新建 `.github/workflows/` 目录，目录中新建 `HexoCI.yml` 文件  
    这里给一个示例 GitHub 工作流配置的方式可查阅 GitHub 官方文档说明
@@ -172,18 +176,20 @@ jobs:
           hexo d
 ```
 # Hexo 配置
-在项目根目录中修改 _config.yml ，增加部署相关内容：
-```yaml
-deploy:
-  type: git
-  repo: git@github.com:username/username.github.io.git
-  branch: master
-```
-> 这里的repox需要填写ssh的形式
+1. 安装 hexo-deployer-git
+   `npm install hexo-deployer-git --save`
+2. 在项目根目录中修改 _config.yml ，增加部署相关内容：
+   ```yaml
+   deploy:
+     type: git
+     repo: git@github.com:username/username.github.io.git
+     branch: master
+   ```
+   > 这里的repox需要填写ssh的形式
 
 # 查看结果
 最后只需要在 Hexo 分支上推送代码即可自动部署博客，执行过程可以在 Actions 中查看  
-完成后直接访问 https://username.github.io.git 查看博客
+完成后直接访问 https://username.github.io 查看博客
 
 ![](./Hexo自动化部署/部署HexoCl.png)
 
