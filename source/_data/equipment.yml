@@ -17,3 +17,13 @@
       description: 配合苹果生态非常方便，普通玩家退烧首选，用了两年发现批次在召回名单中，售后换新了耳机，续航++
       image: ./images/AirPods_Pro.png
       link: https://www.apple.com.cn/airpods-pro/
+    - name: CUKTECH 15 号电能柱 SE
+      specification: 长距离出行必备
+      description: 紫米（ZMI）秽土重生，性价比无敌
+      image: ./images/cuktech15se.png
+      link: https://cuktech.com.cn/show_procon.thtml?id=182
+    - name: 小米立式磁吸充电宝
+      specification: 完美解决了 iPhone 用户出门逛街时的电量焦虑
+      description: "平时放在桌边充当立式充电器，回家也不用单独给充电宝插线充电，目前已下架，酷态科那边新出了一个大容量平替，但牺牲了便携性"
+      image: ./images/xiaomi磁吸充电宝.png
+      link: https://item.jd.com/100037719545.html
