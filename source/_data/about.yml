@@ -29,28 +29,28 @@ skills: # 根据需求添加
   subtitle: 开启创造力
   tags:
     - title: HTML
-      icon: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/HTML.png
+      icon: fab fa-html5
       color: "#e9572b"
     - title: Javascript
-      icon: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/JS.png
+      icon: fab fa-js
       color: "#f7cb4f"
     - title: Kotlin
-      icon: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/kotlin-logo.svg
+      img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/kotlin-logo.svg
       color: "#ffffff"
     - title: Git
-      icon: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/git.png
+      icon: fab fa-git-alt
       color: "#df5b40"
     - title: Docker
-      icon: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/docker.png
+      icon: fab fa-docker
       color: "#57b6e6"
     - title: Visual Studio
-      icon: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
+      img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
       color: "#ffffff"
     - title: Unity
-      icon: ./images/unity.svg
+      icon: fab fa-unity
       color: "#232B38"
     - title: Photoshop
-      icon: ./images/photoshop.svg
+      img: ./images/photoshop.svg
       color: "#ffffff"
 
 careers:
@@ -78,9 +78,9 @@ personalities:
   myphoto: ../images/page_background_min.jpg
 
 motto:
-  title: 座右铭
-  prefix: 破釜沉舟，
-  content: 砥砺前行。
+  title: 建站目的
+  prefix: 分享日常
+  content: 记录生活
 
 expertise:
   title: 特长

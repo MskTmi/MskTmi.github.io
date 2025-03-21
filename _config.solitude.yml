@@ -78,13 +78,13 @@ hometop:
     url: 顺便摸摸鱼 # 小字
     icon:
       HTML: # name
-        img: https://i.postimg.cc/vBWVnY8q/html.png # url
+        icon: fab fa-html5
         color: "#e9572b" # color
       JS:
-        img: https://i.postimg.cc/3N10Ltv2/js.png
+        icon: fab fa-js
         color: "#f7cb4f"
       Docker:
-        img: https://i.postimg.cc/8Pk6Fg24/docker.png
+        icon: fab fa-docker
         color: "#57b6e6"
       Minecraft:
         img: https://camo.githubusercontent.com/8a68bff929184a6a35c00fa4102f2cb94e8f43dd8c485be56641cc6c2019d65d/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6d696e6563726166742e737667
@@ -93,10 +93,10 @@ hometop:
         img: https://camo.githubusercontent.com/12d7a5ae36121cfa69e2861bae53de9d7e77d588745c31cd6af182f7bc7420fa/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6a656c6c7966696e2e737667
         color: "#ffffff"
       Git:
-        img: https://i.postimg.cc/nhgjwjCS/git.png
+        icon: fab fa-git-alt
         color: "#df5b40"
       Steam:
-        img: https://camo.githubusercontent.com/8ba340ed06d582c10bcf8e4f09c149bc57682b8ae6f854f71854c15a38c70916/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f737465616d2e737667
+        icon: fa-brands fa-steam
         color: "#231F20"
 
   group:
