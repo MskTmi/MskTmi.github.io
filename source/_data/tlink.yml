@@ -83,14 +83,43 @@ links:
     type: item
     suffix:
     link_list:
+      - name: SubHD
+        link: https://subhd.tv
+        avatar: https://subhd.tv/public/images/apple-touch-icon.png
+        descr: 影视字幕下载,内容全质量高
       - name: 射手网(伪)
         link: https://secure.assrt.net/
-        avatar: https://t9.baidu.com/it/u=1871430555,1826571769&fm=218&app=126&size=f242,150&n=0&f=JPEG&fmt=auto?s=C2338F6046A16AB11A8806E80300A022&sec=1701018000&t=7fcafa9e7a571c63def0590352f27fbb
+        avatar: https://secure.assrt.net/images/shooter_logo.png
         descr: 影视/新番字幕下载
       - name: Pexels
         link: http://www.pexels.com/
-        avatar: https://www.pexels.com/assets/static/images/meta/apple-touch-icon.png
+        avatar: https://static.pexels.com/1/images/meta/apple-touch-icon.png
         descr: 免费素材图片和视频，无需注明归属可以在任何地方使用
+
+  - class_name: 图标资源
+    descr: 技术栈与应用 SVG 图标来源汇总
+    type: item
+    suffix:
+    link_list:
+      - name: Simple Icons
+        link: https://simpleicons.org/
+        avatar: https://cdn.simpleicons.org/simpleicons
+        descr: 技术栈标准库，覆盖最全，不支持多色图标
+
+      - name: selfh.st Icons
+        link: https://selfh.st/icons/
+        avatar: https://selfh.st/favicon.ico
+        descr: 自托管应用图标，多色且官方，但不包含编程语言与框架
+
+      - name: Coloured Icons
+        link: https://coloured-icons.vercel.app/
+        avatar: https://coloured-icons.vercel.app/favicon.ico
+        descr: 技术栈彩色图标集，视觉统一，但数量有限、覆盖不全
+
+      - name: SVG Repo
+        link: https://www.svgrepo.com/
+        avatar: https://www.svgrepo.com/logo.svg
+        descr: 图标兜底搜索站，多色资源丰富，需自行确认授权
 
   - class_name: 夹带私货
     descr: 究竟谁做了这么棒的网站~
@@ -101,7 +130,7 @@ links:
         link: https://eat.msktmi.com/
         avatar: https://eat.msktmi.com/favicon.ico
         descr: 解决办公室难题——中午吃啥？
-      - name: 红绿灯状态监控
-        link: https://tsc.msktmi.com/
-        avatar: https://tsc.msktmi.com/static/logo.png
-        descr: 避免罚站
+      - name: Divergence Meter
+        link: https://dmeter.msktmi.com
+        avatar: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/github.svg
+        descr: 命运石之门 自定义 "世界线变动率计量器" https://github.com/MskTmi/DivergenceMeter
