@@ -77,20 +77,11 @@ hometop:
     title: 分享日常 <br> 记录生活 # 标题
     url: 顺便摸摸鱼 # 小字
     icon:
-      HTML: # name
-        icon: fab fa-html5
-        color: "#e9572b" # color
-      JS:
-        icon: fab fa-js
-        color: "#f7cb4f"
-      Docker:
-        icon: fab fa-docker
-        color: "#57b6e6"
       Minecraft:
-        img: https://camo.githubusercontent.com/8a68bff929184a6a35c00fa4102f2cb94e8f43dd8c485be56641cc6c2019d65d/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6d696e6563726166742e737667
+        img: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/minecraft.svg
         color: "#111111"
       Jellyfin:
-        img: https://camo.githubusercontent.com/12d7a5ae36121cfa69e2861bae53de9d7e77d588745c31cd6af182f7bc7420fa/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6a656c6c7966696e2e737667
+        img: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/jellyfin.svg
         color: "#ffffff"
       Git:
         icon: fab fa-git-alt
@@ -98,6 +89,14 @@ hometop:
       Steam:
         icon: fa-brands fa-steam
         color: "#231F20"
+      nextjs:
+        img: https://www.svgrepo.com/show/378440/nextjs-fill.svg
+      Docker:
+        icon: fab fa-docker
+        color: "#57b6e6"
+      JS:
+        icon: fab fa-js
+        color: "#f7cb4f"
 
   group:
     # 热门: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
