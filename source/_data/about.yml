@@ -1,6 +1,6 @@
 authorinfo:
   leftTags:
-    - 💻 技术爱好者 
+    - 💻 科技追随者
     - 🏠 智能家居爱好者
     - 🧰 工具人
   rightTags:
@@ -13,45 +13,50 @@ title: 关于本站
 
 contentinfo: # 顶部个人信息展示
   sup: 你好，很高兴认识你👋
-  name: 我是 MskTmi # 名称
-  title: 是一名软件工程师、独立开发者、博主 # 介绍
+  name: 我是 MskTmi
+  title: 是一名码农、独立开发者、开源爱好者
   tip: 热爱、学习、分享
-  slogan: 想要创造
+  slogan: 想要分享
   mask:
-    - 好玩的游戏
-    - 出色的设计
-    - 高效的交互
-    - 优雅的代码
-    - 人性化的用户体验
+    - 踩过的坑
+    - 好用的工具
+    - 有趣的项目
+    - 好看的番剧
+    - 生活经验
+    - 技术文章
 
-skills: # 根据需求添加
+skills:
   title: 技能
-  subtitle: 开启创造力
+  subtitle: 使用
   tags:
     - title: HTML
-      icon: fab fa-html5
-      color: "#e9572b"
+      img: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/html5.svg
     - title: Javascript
-      icon: fab fa-js
-      color: "#f7cb4f"
+      img: https://www.svgrepo.com/show/349419/javascript.svg
     - title: Kotlin
-      img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/kotlin-logo.svg
-      color: "#ffffff"
+      img: https://www.svgrepo.com/show/373728/kotlin.svg
+    - title: react
+      img: https://www.svgrepo.com/show/452092/react.svg
+    - title: nextjs
+      img: https://www.svgrepo.com/show/378440/nextjs-fill.svg
     - title: Git
-      icon: fab fa-git-alt
-      color: "#df5b40"
+      img: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/git.svg
     - title: Docker
-      icon: fab fa-docker
-      color: "#57b6e6"
+      img: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/docker.svg
+    - title: cloudflare
+      img: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/cloudflare.svg
     - title: Visual Studio
       img: https://npm.elemecdn.com/wleelw-blog-abs@1.0.0/img/icon/vs-logo.svg
-      color: "#ffffff"
     - title: Unity
-      icon: fab fa-unity
-      color: "#232B38"
+      img: https://www.svgrepo.com/show/473818/unity.svg
     - title: Photoshop
       img: ./images/photoshop.svg
-      color: "#ffffff"
+    - title: python
+      img: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/python.svg
+    # icon 写法：
+    # - title: Javascript
+    #   icon: fab fa-js
+    #   color: "#f7cb4f"
 
 careers:
   title: 生涯
@@ -64,9 +69,9 @@ careers:
       major: 网站开发
       color: "#FB1111"
   image: ./images/经历.png
-  
+
 personalities:
-  tips: 性格
+  tips: MBTI
   title: 逻辑学家
   color: "#876099"
   type: INTP-A
@@ -85,7 +90,7 @@ motto:
 expertise:
   title: 特长
   prefix: 专治电脑
-  specialist: 赛博医生
+  specialist: 工具人
   content: 动手能力
   level: MAX
 
@@ -93,25 +98,24 @@ game:
   - title: 游戏爱好
     img: https://puui.qpic.cn/vpic_cover/t35319v7vqe/t35319v7vqe_1694560063_hz.jpg/1280
     subtitle: League of Legends
-    box_shadow: '0 -69px 203px 11px #04120f inset'
+    box_shadow: "0 -69px 203px 11px #04120f inset"
     # icon_group:
     #   - https://7.isyangs.cn/66/6738b472ce11f-66.webp
-    #   - https://7.isyangs.cn/66/6738b48045a5b-66.webp
     tips_left: 无限火力爱好者
     tips_right: 艾欧尼亚
   - title: 最近在玩
     img: ./images/bg3.jpg
     subtitle: 博德之门 3
-    box_shadow: '0 -69px 203px 11px #04120f inset'
+    box_shadow: "0 -69px 203px 11px #04120f inset"
     tips_left: MskTmi
     tips_right: "973061951"
 
 likes:
   - type: like-technology
-    bg: ./images/科技.jpg
+    bg: ./images/科技.png
     tips: 关注偏好
     title: 数码科技
-    subtips: 
+    subtips:
     button: true
     button_text: 我的装备
     button_link: /equipment/
@@ -119,7 +123,7 @@ likes:
     bg: ./images/日常.jpg
     tips: 影视偏好
     title: 番剧
-    box_shadow: '0'
+    box_shadow: "0"
     subtips: ID难取
     button: true
     button_text: 我的追番
@@ -128,12 +132,12 @@ likes:
 tj: # 统计
   provider: 51la # 值为 51la（51la网站统计）或 baidu（百度统计）
   url: https://v6-widget.51.la/v6/3KUds0Z4vheRFDqj/quote.js # 需要到51la官网注册自行获取 or 自行搭建 Heo 的 百度统计项目，填写访问地址即可
-  img: https://7.isyangs.cn/1/65eb2e9109826-1.png # 背景
+  img: https://s2.loli.net/2025/09/27/nei765HEZTjYxuO.webp # 背景
 
 oneself: # 按需填写
   location: 中国，上海 # 所在位置
   birthYear: 2001 # 生日
-  university: 编程经验 
+  university: 编程经验
   major: 四年
   occupation: 全栈开发 # 职位
   map: # 你所在位置的地图
@@ -144,13 +148,12 @@ oneself: # 按需填写
 cause:
   tip: 心路历程
   title: 为什么建站？
-  content:
-    <br>
+  content: <br>
     我希望通过这个网站，分享在编程和开发中遇到的各种<b>问题及解决方法</b>，同时记录一些生活中的<b>经验与启发</b>，展示有趣的项目和技术探索的成果。
     <br>
     我希望这些内容能够帮助更多的人<b>解决问题、获得灵感，甚至是节省时间</b>，也希望借此在互联网上留下属于我的一份足迹，让知识的传递与价值的积累成为我成长旅程的一部分。
     <br>
-    
+
 tenyear:
   tips: 十年之约
   title: 先来一个小目标
