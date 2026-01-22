@@ -1,0 +1,29 @@
+/* 调整 note 字体间距 */
+.article-container .note p {
+    letter-spacing: 0.6px;
+}
+
+/* 调整 note 样式 */
+.note {
+    padding: 0.74rem;
+}
+
+/* 调整 note flat 颜色 */
+.note.info:not(.disabled).flat {
+  color: #428bca;
+}
+.note.danger:not(.disabled).flat {
+  color: #d9534f;
+}
+.note.primary:not(.disabled).flat {
+  color: #6f42c1;
+}
+.note.warning:not(.disabled).flat {
+  color: #f0ad4e;
+}
+.note.success:not(.disabled).flat {
+  color: #5cb85c;
+}
+.note.default:not(.disabled).flat {
+  color: #777;
+}

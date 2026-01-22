@@ -1,0 +1,524 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>使用 Cloudflare 对 blog 进行 301 重定向 | Mst</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="https://weavatar.com/avatar/9e431bf36d8a8f03dca1f1b64b9c1c6b"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=2.1.16"><!-- inject head--><link rel="canonical" href="https://blog.msktmi.com/posts/2023/3256749390.html"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"><!-- aplayer--><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="背景前段时间买了域名，但除了挂博客外目前没有其他用途，于是在折腾一段时间后终于把博客挂在了二级域名（blog）下，并设置 apex 域和 www 子域的 301 重定向到二级域名下（域名空着也是空着不如先用起来）所以我需要的操作是把 blog 指向 example.github.io ，并将 顶级域"><!-- pwa--><meta name="theme-color" content="#006a73"><meta name="apple-mobile-web-app-status-bar-style" content="#006a73"><link rel="manifest" href="/manifest.json"><meta name="msapplication-TileColor" content="#006a73"><link rel="mask-icon" href="https://weavatar.com/avatar/9e431bf36d8a8f03dca1f1b64b9c1c6b?s=512" color="#006a73"><link rel="apple-touch-icon" sizes="180x180" href="https://weavatar.com/avatar/9e431bf36d8a8f03dca1f1b64b9c1c6b?s=512"><link rel="icon" type="image/png" sizes="16x16" href="https://weavatar.com/avatar/9e431bf36d8a8f03dca1f1b64b9c1c6b?s=512"><link rel="icon" type="image/png" sizes="32x32" href="https://weavatar.com/avatar/9e431bf36d8a8f03dca1f1b64b9c1c6b?s=512"><link rel="bookmark" href="https://weavatar.com/avatar/9e431bf36d8a8f03dca1f1b64b9c1c6b?s=512"><script>console.log(' %c Solitude %c ' + '2.1.16' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>let mdate = "7-7,9-18,12-13";
+mdate = (mdate.split(","));
+let ndate = new Date();
+for (let i of mdate) {
+    if (i === (ndate.getMonth()+1) + "-" + (ndate.getDate())) {
+        document.documentElement.classList.add('memorial');
+    }
+}
+</script><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default" /><script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script><link rel="stylesheet" href="/css/custom/fontawesome_ico.css"><link rel="stylesheet" href="/css/custom/note.css"><link rel="stylesheet" href="/css/custom/card-history.css"><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+          },
+        }
+    })()</script><!-- theme--><script>initTheme = () => {
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined)
+        document.documentElement.setAttribute('data-theme', 'light');
+    else
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark')
+}
+initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: {"appId":"5SOX15JD2Z","apiKey":"3b769cf6678244127b27849f0896edeb","indexName":"Mst","hits":{"per_page":6}},
+    localsearch: undefined,
+    runtime: '2023-09-19 00:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: false,
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: true,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可","search":{"empty":"找不到你查询的内容：${query}","hit":"找到 ${hits} 条结果，用时 ${time} 毫秒","placeholder":"输入关键词快速查找","count":"共 <b>${count}</b> 条结果。","loading":"搜索中..."},"barrage":{"title":"热评"}},
+    aside: {
+        sayhello: {
+            morning: "早上好，新的一天开始了 ✨",
+            noon: "午餐时间 🍲",
+            afternoon: "下午好 🌞",
+            night: "早点休息",
+            goodnight: "晚安 😴",
+        },
+        sayhello2: ["啊~ 被点击了","这里一片空白","去其他地方看看吧","点我不如启动**","嘤嘤嘤","我什么都做不到！","祝你好运，陌生人","再点也不会怎样的","不要在这里浪费时间","-1"],
+        sayhello3: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: true
+    },
+    comment: {"avatar":"https://weavatar.com/avatar","commentBarrage":true},
+    lightbox: 'mediumZoom',
+    post_ai: false,
+    right_menu: {"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载","barrage":{"open":"显示热评","close":"关闭热评"},"translate":false},
+    translate: {"translateDelay":0,"defaultEncoding":2},
+    lure: {"jump":"这个标签页是什么来着...","back":"ヾ(≧∇≦*)ゝ 欢迎回来"},
+    expire: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: true,
+    comment: true,
+    ai_text: false,
+    color: false,
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><!-- universe--><!-- background img--><!-- loading--><!-- console--><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fa-solid fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><div class="author-content-item-title">最新评论</div></div><div class="console_recentcomments"><script pjax>(async () => {
+    document.querySelector('.console-card .console_recentcomments').textContent = `加载中...`
+    const emojiReg = /<img class="tk-owo-emotion" [^>]+>/g
+    let cache = utils.saveToLocal.get('twikoo-recent-comments-console')
+    if (cache) {
+        setHtml(document.querySelector('.console-card .console_recentcomments'), cache)
+        return
+    }
+    let ls = []
+
+    await fetch('https://msktmi-twikoo.netlify.app/.netlify/functions/twikoo', {
+        method: "POST",
+        body: JSON.stringify({
+            "event": "GET_RECENT_COMMENTS",
+            "includeReply": true,
+            "pageSize": 6
+        }),
+        headers: {'Content-Type': 'application/json'}
+    }).then(res => res.json()).then(async ({data}) => {
+        for (const i of data) {
+            if (i.avatar === undefined) i.avatar = '/avatar/d615d5793929e8c7d70eab5f00f7f5f1?d=mp'
+            let title = ''
+            if (i.url) {
+                await fetch(i.url).then(res => res.text()).then(html => {
+                    const parser = new DOMParser()
+                    const doc = parser.parseFromString(html, 'text/html')
+                    title = doc.querySelector('title').innerText
+                }).catch(() => {
+                    title = i.url
+                })
+            }
+            if (title.indexOf('|') > 0) {
+                title = title.split('|')[0]
+            }
+            ls.push({
+                avatar: i.avatar,
+                nick: i.nick,
+                title: title,
+                content: i.comment,
+                url: i.url + '#' + i.id,
+                time: i.created
+            })
+        }
+        setHtml(document.querySelector('.console-card .console_recentcomments'), ls)
+        utils.saveToLocal.set('twikoo-recent-comments-console', ls, 0.2)
+    });
+
+    function setHtml(el, data) {
+        el.innerHTML = data.map(i => `
+            <div class="comment-card" title="${i.title}" onclick="pjax.loadUrl('${i.url}')">
+                <div class="comment-info">
+                    <img src="${i.avatar}" class="nolazyload" alt="${i.nick}">
+                    <div>
+                        <span class="comment-user">${i.nick}</span>
+                    </div>
+                    <time class="comment-time" datetime="${new Date(i.time)}"></time>
+                </div>
+                <div class="comment-content">${formatContent(i.content)}</div>
+                <div class="comment-title">
+                <i class="solitude fa-solid fa-comment"></i>
+                ${i.title}</div>
+            </div>
+        `).join('')
+        if (typeof sco !== 'undefined') sco.changeTimeFormat(document.querySelectorAll('.comment-time'))
+        else {
+            document.addEventListener('pjax:complete', () => sco.changeTimeFormat(document.querySelectorAll('.comment-time')))
+            document.addEventListener('DOMContentLoaded', () => sco.changeTimeFormat(document.querySelectorAll('.comment-time')))
+        }
+    }
+
+    function formatContent(content) {
+        content = content.replace(emojiReg, '表情')
+        content = content.replace(/<\/*br>|[\s\uFEFF\xA0]+/g, '');
+        content = content.replace(/<img.*?>/g, '[图片]');
+        content = content.replace(/<a.*?>.*?<\/a>/g, '[链接]');
+        content = content.replace(/<pre.*?>.*?<\/pre>/g, '[代码]');
+        content = content.replace(/<.*?>/g, '');
+        return content
+    }
+})()</script></div></div></div><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/%E8%AE%B0%E5%BD%95/">记录<sup>11</sup></a><a href="/tags/Git/">Git<sup>2</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/">教程<sup>3</sup></a><a href="/tags/Hexo/">Hexo<sup>4</sup></a><a href="/tags/HomeKit/">HomeKit<sup>1</sup></a><a href="/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">智能家居<sup>1</sup></a><a href="/tags/HomeAssistant/">HomeAssistant<sup>1</sup></a><a href="/tags/JavaScript/">JavaScript<sup>3</sup></a><a href="/tags/C/">C#<sup>1</sup></a><a href="/tags/MongoDB/">MongoDB<sup>1</sup></a><a href="/tags/Windows/">Windows<sup>2</sup></a><a href="/tags/Cloudflare/">Cloudflare<sup>1</sup></a><a href="/tags/%E5%86%B7%E7%AC%91%E8%AF%9D/">冷笑话<sup>1</sup></a><a href="/tags/%E9%A2%84%E5%88%B6%E8%8F%9C/">预制菜<sup>1</sup></a><a href="/tags/%E6%B5%8B%E8%AF%84/">测评<sup>1</sup></a><a href="/tags/%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86/">批量处理<sup>1</sup></a><a href="/tags/%E6%B8%B8%E6%88%8F/">游戏<sup>1</sup></a><a href="/tags/%E4%BF%AE%E6%94%B9/">修改<sup>1</sup></a><a href="/tags/%E7%94%9F%E6%B4%BB/">生活<sup>1</sup></a><a href="/tags/%E7%94%9F%E6%80%81%E7%BC%B8/">生态缸<sup>1</sup></a><a href="/tags/%E5%AE%A0%E7%89%A9/">宠物<sup>1</sup></a><a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">代码规范<sup>1</sup></a><a href="/tags/PapaParse/">PapaParse<sup>1</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/11/"><span class="card-archive-list-date">2025/11</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/11/"><span class="card-archive-list-date">2024/11</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">2024/05</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">2024/04</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">2024/03</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">2024/01</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">2023/11</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">2023/10</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/"><span class="card-archive-list-date">全部文章</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">17</span><span class="card-archive-list-count-unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fa-solid fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fas fa-arrows-left-right-to-line"></i></span></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="sco.switchCommentBarrage()"><span class="commentBarrage"><i class="solitude fa-solid fa-comment"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" href="javascript:travelling()"><i class="solitude  fas fa-gift"></i><span>宝藏博主</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>分享</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/site/"><i class="solitude  fas fa-globe"></i><span>网站分享</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="solitude  fas fa-image"></i><span>图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/equipment/"><i class="solitude  fas fa-toolbox"></i><span>我的装备</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="solitude  fa-brands fa-bilibili"></i><span>我的追番</span></a></li><li><a class="site-page child" href="/cinemas/"><i class="solitude  fas fa-tv"></i><span>我的追剧</span></a></li><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于本站</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"><a href="/tags/%E8%AE%B0%E5%BD%95/">记录<sup>11</sup></a><a href="/tags/Git/">Git<sup>2</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/">教程<sup>3</sup></a><a href="/tags/Hexo/">Hexo<sup>4</sup></a><a href="/tags/HomeKit/">HomeKit<sup>1</sup></a><a href="/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">智能家居<sup>1</sup></a><a href="/tags/HomeAssistant/">HomeAssistant<sup>1</sup></a><a href="/tags/JavaScript/">JavaScript<sup>3</sup></a><a href="/tags/C/">C#<sup>1</sup></a><a href="/tags/MongoDB/">MongoDB<sup>1</sup></a><a href="/tags/Windows/">Windows<sup>2</sup></a><a href="/tags/Cloudflare/">Cloudflare<sup>1</sup></a><a href="/tags/%E5%86%B7%E7%AC%91%E8%AF%9D/">冷笑话<sup>1</sup></a><a href="/tags/%E9%A2%84%E5%88%B6%E8%8F%9C/">预制菜<sup>1</sup></a><a href="/tags/%E6%B5%8B%E8%AF%84/">测评<sup>1</sup></a><a href="/tags/%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86/">批量处理<sup>1</sup></a><a href="/tags/%E6%B8%B8%E6%88%8F/">游戏<sup>1</sup></a><a href="/tags/%E4%BF%AE%E6%94%B9/">修改<sup>1</sup></a><a href="/tags/%E7%94%9F%E6%B4%BB/">生活<sup>1</sup></a><a href="/tags/%E7%94%9F%E6%80%81%E7%BC%B8/">生态缸<sup>1</sup></a><a href="/tags/%E5%AE%A0%E7%89%A9/">宠物<sup>1</sup></a><a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">代码规范<sup>1</sup></a><a href="/tags/PapaParse/">PapaParse<sup>1</sup></a></div></div><span class="sidebar-menu-item-title">网站信息</span><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="item-icon solitude fa-solid fa-file-word"></i><div class="item-name">全站字数 :</div></div><div class="item-count">13.3k</div></div></div></div></div><!-- keyboard--><!-- righhtside--><div class="needEndHide" id="rightside"><div class="rs_hide"><button class="mode" type="button" title="显示模式切换" onclick="sco.switchDarkMode()"><i class="fas fa-circle-half-stroke"></i></button><button class="aside pc" type="button" title="侧边栏" onclick="sco.switchHideAside()"><i class="fas fa-arrows-alt-h"></i></button></div><div class="rs_show"><button class="config" type="button" title="扩展" onclick="document.querySelector(&quot;.rs_hide&quot;).classList.toggle(&quot;show&quot;)"><i class="fas fa-gear fa-spin"></i></button><button class="mobile toc" type="button" title="目录" onclick="document.querySelector('#card-toc').classList.toggle('open')"><i class="fas fa-list"></i></button><button class="comment" type="button" title="评论" onclick="sco.scrollTo('post-comment')"><i class="fas fa-comment"></i></button><button class="barrage pc" type="button" title="弹" onclick="sco.switchCommentBarrage()"><span>弹</span></button><button class="top" type="button" title="返回顶部" onclick="sco.toTop()"><i class="fas fa-arrow-up"></i><span id="percent">0</span></button></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="/" title="返回博客主页"><span class="title">Mst</span><i class="solitude fa-solid fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">使用 Cloudflare 对 blog 进行 301 重定向</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" href="javascript:travelling()"><i class="solitude  fas fa-gift"></i><span>宝藏博主</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>分享</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/site/"><i class="solitude  fas fa-globe"></i><span>网站分享</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="solitude  fas fa-image"></i><span>图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/equipment/"><i class="solitude  fas fa-toolbox"></i><span>我的装备</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="solitude  fa-brands fa-bilibili"></i><span>我的追番</span></a></li><li><a class="site-page child" href="/cinemas/"><i class="solitude  fas fa-tv"></i><span>我的追剧</span></a></li><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于本站</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索"><i class="solitude fa-solid fa-magnifying-glass"></i></a></div><div class="nav-button" id="nav-console"><a class="console_switchbutton" onclick="sco.showConsole()" title="中控台" href="javascript:void(0);"><label><i class="left"></i><i class="center"></i><i class="right"></i></label></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fa-solid fa-bars"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="/posts/2023/3256749390/%E5%B0%81%E9%9D%A2.jpg" alt="使用 Cloudflare 对 blog 进行 301 重定向"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><span class="post-meta-categories"><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%B0%E5%BD%95/"><span class="tags-name tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>记录</span></a><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/"><span class="tags-name tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>教程</span></a><a class="post-meta__tags" href="/tags/Hexo/"><span class="tags-name tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>Hexo</span></a><a class="post-meta__tags" href="/tags/Cloudflare/"><span class="tags-name tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>Cloudflare</span></a></div></div></div></div><h1 class="post-title">使用 Cloudflare 对 blog 进行 301 重定向</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2023-11-07 16:04:30"><i class="post-meta-icon solitude fas fa-calendar-days"></i><time datetime="2023-11-07T08:04:30.000Z">2023-11-07T08:04:30.000Z</time></span><span class="post-meta-date" title="最后更新于 2023-11-10 22:37:00"><i class="post-meta-icon solitude fa-solid fa-arrows-rotate"></i><time datetime="2023-11-10T14:37:00.000Z">2023-11-10T14:37:00.000Z</time></span><span class="post-meta-wordcount"><i class="post-meta-icon solitude fa-solid fa-file-word" title="文章字数"></i><span class="word-count">1.2k</span><span class="post-meta-separator"></span><i class="post-meta-icon solitude fa-solid fa-clock" title="阅读耗时"></i><span>4 min</span></span><a class="post-meta-pv" href="/posts/2023/3256749390.html" title="文章热度"><i class="post-meta-icon solitude fa-solid fa-fire-flame-curved"></i><span id="busuanzi_value_page_pv"><i class="solitude fa-solid fa-spinner fa-spin"></i></span></a></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content article-container"><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>前段时间买了域名，但除了挂博客外目前没有其他用途，于是在折腾一段时间后终于把博客挂在了二级域名（blog）下，并设置 apex 域和 www 子域的 301 重定向到二级域名下（域名空着也是空着不如先用起来）<br>所以我需要的操作是把 blog 指向 example.github.io ，并将 顶级域名 和 www 指向 blog  </p>
+<blockquote>
+<p><code>example.com &amp;&amp; www.example.com -&gt; blog.example.com -&gt; example.github.io</code></p>
+</blockquote>
+<p>由于 GitHub Pages 只能设置一个 CNAME 所以便有了这篇文章～</p>
+<h2 id="301-重定向"><a href="#301-重定向" class="headerlink" title="301 重定向"></a>301 重定向</h2><p>301 重定向多用于迁移网站时将旧的资源重定向到新的域名下，我了解到的实现重定向的方法大致可以分为三类  </p>
+<ol>
+<li>使用服务器或是虚拟主机转发，但大多需要额外付费</li>
+<li>新建 GitHub 仓库，利用仓库中的 GitHub Pages 再设置一个 CNAME 重定向，需要几个转发就要创建几个仓库，如果只需要一个重定向可以选择这种方法</li>
+<li>使用其他服务商进行转发，例如白嫖 Cloudflare (～￣▽￣)～ <blockquote>
+<p>Cloudflare 的 Free 计划可以设置三个页面转发规则</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="Cloudflare-设置"><a href="#Cloudflare-设置" class="headerlink" title="Cloudflare 设置"></a>Cloudflare 设置</h1><h2 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h2><ol>
+<li><a href="%5B./%E4%BD%BF%E7%94%A8Cloudflare%E5%AF%B9blog%E8%BF%9B%E8%A1%8C301%E9%87%8D%E5%AE%9A%E5%90%91/%E6%8F%90%E7%A4%BA.png%5D(https://dash.cloudflare.com/sign-up)">注册 Cloudflare 账号</a>，选择 Free 计划，如果你恰巧实力雄厚也可以选择 Pro 计划等</li>
+<li>进入到控制台中，在左边的 <code>网站</code> 标签中添加你的域名</li>
+<li>在你的域名服务商那边修改 DNS 为 Cloudflare 提供的 DNS 服务器<ul>
+<li><code>fish.ns.cloudflare.com</code></li>
+<li><code>jerome.ns.cloudflare.com</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="设置-DNS-记录（解析）"><a href="#设置-DNS-记录（解析）" class="headerlink" title="设置 DNS 记录（解析）"></a>设置 DNS 记录（解析）</h2><p>直接在 <code>DNS/记录</code> 下添加记录即可</p>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">名称</th>
+<th align="center">内容</th>
+<th align="center">代理状态</th>
+<th align="center"> TTL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">A</td>
+<td align="center">example.com</td>
+<td align="center">8.8.8.8</td>
+<td align="center"> 已代理</td>
+<td align="center">自动</td>
+</tr>
+<tr>
+<td align="center"> A</td>
+<td align="center">www</td>
+<td align="center">8.8.8.8</td>
+<td align="center"> 已代理</td>
+<td align="center">自动</td>
+</tr>
+<tr>
+<td align="center"> CNAME</td>
+<td align="center">blog</td>
+<td align="center">example.github.io</td>
+<td align="center"> 已代理</td>
+<td align="center">自动</td>
+</tr>
+</tbody></table>
+<p><code>CNAME 记录</code> 设置 blog.example.com 重定向到 example.github.io<br><code>A 记录</code> 设置好需要转发的域名，内容随便写就行</p>
+<p><img src="/posts/2023/3256749390/dns%E8%A7%A3%E6%9E%90.png"></p>
+<h2 id="设置转发规则"><a href="#设置转发规则" class="headerlink" title="设置转发规则"></a>设置转发规则</h2><p>直接在 <code>规则/页面规则</code> 下添加记录即可</p>
+<table>
+<thead>
+<tr>
+<th align="center">URL</th>
+<th align="center"> 设置</th>
+<th align="center">状态代码</th>
+<th align="center">目标 URL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>example.com/*</code></td>
+<td align="center">转发 URL</td>
+<td align="center">301</td>
+<td align="center"><code>https://blog.example.com/$1</code></td>
+</tr>
+<tr>
+<td align="center"><code>www.example.com/*</code></td>
+<td align="center">转发 URL</td>
+<td align="center">301</td>
+<td align="center"><code>https://blog.example.com/$1</code></td>
+</tr>
+</tbody></table>
+<p>在转发 URL 中，可以按照从左到右的顺序指定与原始 URL 中的通配符（*）相匹配的 $1、$2，以此类推</p>
+<p>例如：<br>可以将 <code>http://*.example.com/*</code> 转发到 <code>http://$2.example.com/$1.jpg</code><br>此规则将与 <code>http://cloud.example.com/flare</code> 相匹配，这最终将转发到 <code>http://flare.example.com/cloud.jpg</code></p>
+<h3 id="一些有用的提示："><a href="#一些有用的提示：" class="headerlink" title="一些有用的提示："></a>一些有用的提示：</h3><ol>
+<li>如果要同时匹配 http 和 https，只需编写 example.com 即可，无需编写 example.com</li>
+<li> 如果要匹配域中的每个页面，则需要编写 example.com/，仅编写 example.com 是不够的</li>
+<li>请参阅 <a target="_blank" rel="noopener" href="https://developers.cloudflare.com/support/page-rules/understanding-and-configuring-cloudflare-page-rules-page-rules-tutorial/">了解和配置 Cloudflare 页面规则</a> 了解有关页面规则模式的更多详细信息</li>
+</ol>
+<p><img src="/posts/2023/3256749390/%E8%BD%AC%E5%8F%91%E8%A7%84%E5%88%99.png"></p>
+<h1 id="创建-CNAME-文件"><a href="#创建-CNAME-文件" class="headerlink" title="创建 CNAME 文件"></a>创建 CNAME 文件</h1><p>在发布的静态页面根目录下创建一个 <code>CNAME</code> 文件（无后缀名），用于将一个域名指向另一个域名<br>这里用 Hexo 举例，在 <code>Hexo/source/</code> 下创建一个 <code>CNAME</code> 文件，这样 Hexo 在发布时会将 source 下的 CNAME 文件一起打包到 public 文件中<br>内容为 <code>自定义子域.顶级域名.后缀</code> 自定义子域为 Cloudflare 中设置的 CNAME<br>例如：<code>blog.example.com</code></p>
+<p><img src="/posts/2023/3256749390/cname%E5%88%9B%E5%BB%BA.png"></p>
+<h1 id="在-GitHub-Pages-中设置"><a href="#在-GitHub-Pages-中设置" class="headerlink" title="在 GitHub Pages 中设置"></a>在 GitHub Pages 中设置</h1><blockquote>
+<p>如果你的博客不在 GitHub Pages 下可以跳进下个标题</p>
+</blockquote>
+<p>在域名解析完成后，可以在项目中的 GitHub Pages 设置页面指定其他的域名</p>
+<p><img src="/posts/2023/3256749390/%E6%8F%90%E7%A4%BA.png"></p>
+<p>因为使用的是 <code>CNAME</code> 解析，在设置完成后 GitHub Pages 会自动在仓库中创建一个 <code>CNAME</code> 文件，但如果只修改这里，使用 <a href="https://blog.msktmi.com/2023/10/07/2933477798.html">GitHub Actions 自动部署</a> 时会覆盖掉旧的仓库<br>为了避免发生这种情况需要在 <code>Hexo/source/</code> 下创建一个 <code>CNAME</code> 文件，这样可以将 CNAME 作为博客的一部分发布，GitHub Pages 设置页面也会自动同步 CNAME 文件中的信息</p>
+<p><img src="/posts/2023/3256749390/%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%88%90.png"></p>
+<h1 id="测试重定向配置"><a href="#测试重定向配置" class="headerlink" title="测试重定向配置"></a>测试重定向配置</h1><div class="note warning flat simple no-icon"><p>域名配置 DNS 和设置 301 重定向后建议等待几小时后再进行测试<br>延迟时间取决于多个因素，可能是 DNS 服务器的缓存、浏览器的缓存、网络的延迟等<br>建议在测试 301 转跳是时开启控制台并在网络选项中禁用缓存</p></div>
+
+<p>也可以在这个网站进行测试：<a target="_blank" rel="noopener" href="https://www.dute.org/httpstatus">HTTP 状态检测</a></p>
+<p><img src="/posts/2023/3256749390/%E6%A3%80%E6%B5%8B.png"></p>
+<h1 id="善后"><a href="#善后" class="headerlink" title="善后"></a>善后</h1><p>有些插件或配置可能会随着域名的更改而产生问题  </p>
+<h2 id="Gitalk"><a href="#Gitalk" class="headerlink" title="Gitalk"></a>Gitalk</h2><p>在修改完域名后还需要修改 <a target="_blank" rel="noopener" href="https://github.com/settings/developers">OAuth Apps</a> 中 Gitalk 设置的 <strong>Authorization callback URL</strong>  为新的域名地址</p>
+<blockquote>
+<p><code>https://example.github.io/ -&gt; https://blog.example.com/</code></p>
+</blockquote>
+<p><img src="/posts/2023/3256749390/Gitalk.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><a class="post-copyright__author_img" href="/about/"><img class="post-copyright__author_img_front" src="https://weavatar.com/avatar/9e431bf36d8a8f03dca1f1b64b9c1c6b"></a><div class="post-copyright__author_name">Mst</div><div class="post-copyright__author_desc"></div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div></div></div><div class="social-share"><a class="social-share-ico icon-qq" target="_blank" rel="noopener" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fblog.msktmi.com%2Fposts%2F2023%2F3256749390.html&amp;title=%E4%BD%BF%E7%94%A8%20Cloudflare%20%E5%AF%B9%20blog%20%E8%BF%9B%E8%A1%8C%20301%20%E9%87%8D%E5%AE%9A%E5%90%91&amp;desc=undefined&amp;summary=undefined&amp;site=%E4%BD%BF%E7%94%A8%20Cloudflare%20%E5%AF%B9%20blog%20%E8%BF%9B%E8%A1%8C%20301%20%E9%87%8D%E5%AE%9A%E5%90%91&amp;pics=%2Fposts%2F2023%2F3256749390%2F%E5%B0%81%E9%9D%A2.jpg" title="分享到QQ"><i class="solitude fab fa-qq"></i></a><a class="social-share-ico icon-weibo" target="_blank" rel="noopener" href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Fblog.msktmi.com%2Fposts%2F2023%2F3256749390.html&amp;title=%E4%BD%BF%E7%94%A8%20Cloudflare%20%E5%AF%B9%20blog%20%E8%BF%9B%E8%A1%8C%20301%20%E9%87%8D%E5%AE%9A%E5%90%91&amp;pic=%2Fposts%2F2023%2F3256749390%2F%E5%B0%81%E9%9D%A2.jpg" title="分享到微博"><i class="solitude fab fa-weibo"></i></a><a class="social-share-ico icon-twitter" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fblog.msktmi.com%2Fposts%2F2023%2F3256749390.html&amp;text=%E4%BD%BF%E7%94%A8%20Cloudflare%20%E5%AF%B9%20blog%20%E8%BF%9B%E8%A1%8C%20301%20%E9%87%8D%E5%AE%9A%E5%90%91" title="分享到Twitter"><i class="solitude fab fa-twitter"></i></a><a class="social-share-ico icon-facebook" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblog.msktmi.com%2Fposts%2F2023%2F3256749390.html" title="分享到Facebook"><i class="solitude fab fa-facebook"></i></a><a class="social-share-ico icon-telegram" target="_blank" rel="noopener" href="https://t.me/share/url?url=https%3A%2F%2Fblog.msktmi.com%2Fposts%2F2023%2F3256749390.html&amp;text=%E4%BD%BF%E7%94%A8%20Cloudflare%20%E5%AF%B9%20blog%20%E8%BF%9B%E8%A1%8C%20301%20%E9%87%8D%E5%AE%9A%E5%90%91" title="分享到Telegram"><i class="solitude fab fa-telegram"></i></a><div class="social-share-ico icon-link" onclick="utils.copy(&quot;https://blog.msktmi.com/posts/2023/3256749390.html&quot;)" title="复制文章链接"><i class="solitude fas fa-link"></i></div><div class="social-share-ico icon-qrcode" title="使用手机扫码阅读这篇文章"><i class="solitude fas fa-qrcode"></i><div class="share-main"><div class="share-main-all"><div id="qrcode"></div><div class="reward-dec">使用手机扫码阅读这篇文章</div></div></div><script pjax>typeof QRCode === 'function' && new QRCode(document.getElementById("qrcode"), {
+    text: 'https://blog.msktmi.com/posts/2023/3256749390.html',
+    correctLevel : QRCode.CorrectLevel.L
+});
+window.addEventListener('DOMContentLoaded', () => {
+    new QRCode(document.getElementById("qrcode"), {
+        text: 'https://blog.msktmi.com/posts/2023/3256749390.html',
+        correctLevel : QRCode.CorrectLevel.L
+    });
+});
+</script></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">Mst</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%B0%E5%BD%95/"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>记录<span class="tagsPageCount">11</span></span></a><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>教程<span class="tagsPageCount">3</span></span></a><a class="post-meta__tags" href="/tags/Hexo/"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>Hexo<span class="tagsPageCount">4</span></span></a><a class="post-meta__tags" href="/tags/Cloudflare/"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>Cloudflare<span class="tagsPageCount">1</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/2023/530611942.html"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MongoDB for C#/.NET</div></div></a></div><div class="next-post pull-right"><a href="/posts/2023/210468433.html"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">约定式提交</div></div></a></div></nav>
+        <div class="relatedPosts">
+            <div class="headline">
+                <i class="solitude fa-solid fa-star"></i>
+                <span>喜欢这篇的人也看了</span>
+                <div class="relatedPosts-link">
+                    <a onclick="event.preventDefault(); toRandomPost();" href="javascript:void(0);" rel="external nofollow" data-pjax-state="">随便逛逛</a>
+                </div>
+            </div>
+            <div class="relatedPosts-list">
+            <div>
+                <a href="/posts/2024/1676595487.html" title="修复 hexo-algoliasearch 没有到找 db.json">
+                    <img class="cover" src="/posts/2024/1676595487/%E5%B0%81%E9%9D%A2.png" alt="cover">
+                    <div class="content is-center">
+                        <div class="title">修复 hexo-algoliasearch 没有到找 db.json</div>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <a href="/posts/2023/4089126318.html" title="修复 Hexo 无法显示图片 &#x2F; 封面">
+                    <img class="cover" src="/posts/2023/4089126318/404%E5%B0%81%E9%9D%A2.png" alt="cover">
+                    <div class="content is-center">
+                        <div class="title">修复 Hexo 无法显示图片 &#x2F; 封面</div>
+                    </div>
+                </a>
+            </div>
+            </div>
+        </div><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="solitude fa-solid fa-comment"></i><span> 评论</span></div></div><div class="comment-wrap"><div id="twikoo-wrap"></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="author-info__top-group"><div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">sayhello.morning</div></div></div><div class="avatar-img-group"><img class="avatar-img" alt="头像" src="https://weavatar.com/avatar/9e431bf36d8a8f03dca1f1b64b9c1c6b?s=512"></div><div class="author-info__description_group"><div class="author-info__description">公告：</div><div class="author-info__description2">没有公告，特此公告</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/about/"><div class="author-info__name">MskTmi</div><div class="author-info__desc"></div></a><div class="card-info-social-icons is-center"><a class="social-icon" target="_blank" rel="noopener" href="https://github.com/MskTmi" title="Github"><i class="solitude  fab fa-github"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/8803758" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fa-solid fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#301-%E9%87%8D%E5%AE%9A%E5%90%91"><span class="toc-text">301 重定向</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cloudflare-%E8%AE%BE%E7%BD%AE"><span class="toc-text">Cloudflare 设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C"><span class="toc-text">注册</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-DNS-%E8%AE%B0%E5%BD%95%EF%BC%88%E8%A7%A3%E6%9E%90%EF%BC%89"><span class="toc-text">设置 DNS 记录（解析）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%BD%AC%E5%8F%91%E8%A7%84%E5%88%99"><span class="toc-text">设置转发规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E6%8F%90%E7%A4%BA%EF%BC%9A"><span class="toc-text">一些有用的提示：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-CNAME-%E6%96%87%E4%BB%B6"><span class="toc-text">创建 CNAME 文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8-GitHub-Pages-%E4%B8%AD%E8%AE%BE%E7%BD%AE"><span class="toc-text">在 GitHub Pages 中设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E9%87%8D%E5%AE%9A%E5%90%91%E9%85%8D%E7%BD%AE"><span class="toc-text">测试重定向配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%96%84%E5%90%8E"><span class="toc-text">善后</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Gitalk"><span class="toc-text">Gitalk</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fa-solid fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/posts/2025/1425600467.html" title="修改 Windows 任务栏应用图标"><div class="thumbnail"><img alt="修改 Windows 任务栏应用图标" src="/posts/2025/1425600467/%E5%B0%81%E9%9D%A2.png"></div><div class="content"><span class="title" href="/posts/2025/1425600467.html" title="修改 Windows 任务栏应用图标">修改 Windows 任务栏应用图标</span><span class="article-recent_post_categories" href="/posts/2025/1425600467.html">记录</span></div></a><a class="aside-list-item" href="/posts/2024/1676595487.html" title="修复 hexo-algoliasearch 没有到找 db.json"><div class="thumbnail"><img alt="修复 hexo-algoliasearch 没有到找 db.json" src="/posts/2024/1676595487/%E5%B0%81%E9%9D%A2.png"></div><div class="content"><span class="title" href="/posts/2024/1676595487.html" title="修复 hexo-algoliasearch 没有到找 db.json">修复 hexo-algoliasearch 没有到找 db.json</span><span class="article-recent_post_categories" href="/posts/2024/1676595487.html">记录</span></div></a><a class="aside-list-item" href="/posts/2024/1086972303.html" title="HomeKit 无法添加配件"><div class="thumbnail"><img alt="HomeKit 无法添加配件" src="/posts/2024/1086972303/%E5%B0%81%E9%9D%A2.jpg"></div><div class="content"><span class="title" href="/posts/2024/1086972303.html" title="HomeKit 无法添加配件">HomeKit 无法添加配件</span><span class="article-recent_post_categories" href="/posts/2024/1086972303.html">智能家居</span></div></a><a class="aside-list-item" href="/posts/2024/2169866522.html" title="开一个生态龟缸"><div class="thumbnail"><img alt="开一个生态龟缸" src="/posts/2024/2169866522/%E5%91%A8%E8%BD%AC%E7%AE%B1.jpg"></div><div class="content"><span class="title" href="/posts/2024/2169866522.html" title="开一个生态龟缸">开一个生态龟缸</span><span class="article-recent_post_categories" href="/posts/2024/2169866522.html">记录</span></div></a><a class="aside-list-item" href="/posts/2024/580597065.html" title="批量替换文件名"><div class="thumbnail"><img alt="批量替换文件名" src="/posts/2024/580597065/%E5%B0%81%E9%9D%A2.jpg"></div><div class="content"><span class="title" href="/posts/2024/580597065.html" title="批量替换文件名">批量替换文件名</span><span class="article-recent_post_categories" href="/posts/2024/580597065.html">记录</span></div></a></div></div></div></div></main><footer id="footer"><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2023 - 2026 By&nbsp;<a class="footer-bar-link" href="/"><img class="author-avatar" src="https://weavatar.com/avatar/9e431bf36d8a8f03dca1f1b64b9c1c6b">MskTmi</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" alt="Hexo | Solitude">Hexo | Solitude</a></div></div></div><div class="comment-barrage needEndHide"></div></footer></div><!-- right_menu--><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="solitude fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="solitude fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="solitude fa-solid fa-arrows-rotate"></i></div><div class="rightMenu-item" id="menu-top"><i class="solitude fa-solid fa-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="solitude fa-solid fa-clone"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="solitude fa-solid fa-clipboard"></i><span>粘贴文本</span></div><div class="rightMenu-item" id="menu-commenttext"><i class="solitude fa-solid fa-comment-medical"></i><span>引用到评论</span></div><div class="rightMenu-item" id="menu-newwindow"><i class="solitude fa-regular fa-window-maximize"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="solitude fa-solid fa-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="solitude fa-solid fa-clone"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="solitude fa-solid fa-cloud-arrow-down"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-search"><i class="solitude fa-solid fa-magnifying-glass"></i><span>站内搜索</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-randomPost" onclick="toRandomPost()||rm.hideRightMenu()"><i class="solitude fas fa-tower-broadcast"></i><span>随机文章</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-darkmode" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></div></div></div><div id="rightmenu-mask"></div><!-- inject body--><div><script src="/js/utils.js?v=2.1.16"></script><script src="/js/main.js?v=2.1.16"></script><script src="/js/third_party/waterfall.min.js?v=2.1.16"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><script src="/js/tw_cn.js?v=2.1.16"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.6.0/color-thief.min.js"></script><script src="/js/covercolor/local.js?v=2.1.16"></script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+utils.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/instantsearch.js/4.75.6/instantsearch.production.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/algoliasearch/5.18.0/algoliasearch.umd.min.js"></script><script src="/js/right_menu.js?v=2.1.16"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script><script defer pjax src="/js/plugins/card-history.js"></script><script defer pjax src="/js/plugins/card-welcome.js"></script><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3KUds0Z4vheRFDqj",ck:"3KUds0Z4vheRFDqj"})</script><div class="js-pjax"><script>(() => {
+    const getCount = () => {
+        const ele = document.querySelectorAll('.twikoo-count')
+        if (!ele) return
+        twikoo.getCommentsCount({
+            envId: 'https://msktmi-twikoo.netlify.app/.netlify/functions/twikoo',
+            region: '',
+            urls: [window.location.pathname],
+            includeReply: false
+        }).then(res => {
+            ele.forEach(item => item.textContent = res[0].count)
+        }).catch(err => {
+            console.error(err)
+        })
+    }
+    const init = () => {
+        twikoo.init(Object.assign({
+            el: '#twikoo-wrap',
+            envId: 'https://msktmi-twikoo.netlify.app/.netlify/functions/twikoo',
+            region: '',
+            path: window.location.pathname,
+            onCommentLoaded: () => {
+                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+            }
+        }, null))
+
+        
+        sco.owoBig({
+            body: '.OwO-body',
+            item: '.OwO-items li'
+        })
+
+        true && barrageTwikoo()
+    }
+
+    const loadTwikoo = () => {
+        if (typeof twikoo === 'object') setTimeout(init,0)
+        else utils.getScript('https://cdnjs.cloudflare.com/ajax/libs/twikoo/1.6.40/twikoo.all.min.js').then(init)
+    }
+
+    if ('Twikoo' === 'Twikoo' || false) {
+        if (false) utils.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+        else loadTwikoo()
+    } else {
+        window.loadTwoComment = loadTwikoo
+    }
+})()
+</script><script>async function barrageTwikoo() {
+    await fetch("https://msktmi-twikoo.netlify.app/.netlify/functions/twikoo", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            event: "COMMENT_GET",
+            accessToken: "",
+            url: window.location.pathname
+        })
+    }).then(async res => {
+        if (!res.ok) throw new Error("HTTP error! status: " + res.status)
+        const data = await res.json();
+        const init = () => {
+            initializeCommentBarrage((data.data).map(item => Object.assign({
+                content: item.comment,
+                nick: item.nick,
+                mailMd5: item.mailMd5,
+                id: item.id
+            })))
+        }
+        if (typeof initializeCommentBarrage === "undefined") await utils.getScript('/js/third_party/barrage.min.js?v=2.1.16').then(init)
+        else init()
+    }).catch(error => console.error("An error occurred while fetching comments: ", error))
+}</script><script defer pjax src="https://cdnjs.cloudflare.com/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js"></script></div></div><script>const links = [{"name":"fsry","link":"https://blog.sayentt.com"},{"name":"CvRain","link":"https://cvrain.cloudvl.cn"},{"name":"Mess1A","link":"https://blog.mess1a.com/"}]
+const randomText = '点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：⌈ ${name} ⌋'
+function travelling() {
+    const link = links[utils.randomNum(links.length)];
+    Snackbar.show({
+        text: randomText.replace(/\$\{name}/,link.name),
+        duration: 8000,
+        pos: 'top-center',
+        actionText: '前往',
+        onActionClick: function(element) {
+            element.style.opacity = 0;
+            window.open(link.link, '_blank');
+        }
+    });
+}
+</script><script>function randomLinksList() {
+    const linkcard = document.getElementById('friend-links-in-footer');
+    if (linkcard == null) return;
+
+    let data = '';
+    let linksCopy = [...links];
+    let count = Math.min(3, linksCopy.length);
+
+    for (let i = 0; i < count; i++) {
+        let index = utils.randomNum(linksCopy.length);
+        const {link, name} = linksCopy[index];
+        data += `<a class="footer-item" href="${link}" target="_blank" rel="noopener noreferrer nofollow">${name}</a>`;
+        linksCopy.splice(index, 1);
+    }
+
+    linkcard.innerHTML = data + '<a class="footer-item" href="/links/">更多</a>';
+}</script><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- google adsense--><!-- search--><div id="algolia-search"><div class="search-dialog"><div class="algolia-navbar"><div class="search-dialog__title" id="algolia-search-title">搜索</div><div class="algolia-tips"><i class="solitude fab fa-algolia"></i><span class="algolia-tips-text">Algolia</span></div><span class="search-close-button"><i class="solitude fa-solid fa-xmark"></i></span></div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><div id="search-results"><div id="algolia-hits"></div></div><div id="algolia-tips"><div id="algolia-pagination"></div><div id="algolia-stats"></div></div></div><div id="search-mask"></div></div><script src="/js/search/algolia.js?v=2.1.16"></script><!-- Tianli-Talk--><!-- music--></body></html>
+        <script>
+            const posts = ["posts/2025/1425600467.html","posts/2024/1676595487.html","posts/2024/1086972303.html","posts/2024/2169866522.html","posts/2024/580597065.html","posts/2024/2114342764.html","posts/2024/1966840030.html","posts/2024/1857581413.html","posts/2023/530611942.html","posts/2023/3256749390.html","posts/2023/210468433.html","posts/2023/3385504687.html","posts/2023/97572495.html","posts/2023/1338592505.html","posts/2023/3038617486.html","posts/2023/4089126318.html","posts/2023/2933477798.html"];
+            function toRandomPost() {
+                const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
+            }
+        </script>
